@@ -107,6 +107,12 @@ deploy:
   repo: git@github.com:Levyya/Levyya.github.io.git ## https://github.com/Leonardosss/levy.github.io.git
   branch: master
 
+backup:
+    type: git
+    repository:
+       github: git@github.com:Levyya/Levyya.github.io.git,hexo
+       gitcafe: git@git.coding.net:Levyya/Levyya.github.io.git,hexo 
+
 
 jsonContent:
   meta: false
