@@ -110,8 +110,7 @@ deploy:
 backup:
     type: git
     repository:
-       github: git@github.com:Levyya/Levyya.github.io.git,hexo
-       gitcafe: git@git.coding.net:Levyya/Levyya.github.io.git,hexo 
+       github: git@github.com:Levyya/Levyya.github.io.git, backup
 
 
 jsonContent:
