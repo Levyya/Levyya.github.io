@@ -32,6 +32,7 @@ tags: record
 * [5. 最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/)
 * [11. 盛最多水的容器](https://leetcode-cn.com/problems/container-with-most-water/)
 * [128. 最长连续序列](https://leetcode-cn.com/problems/longest-consecutive-sequence/)
+* [385. 迷你语法分析器](https://leetcode-cn.com/problems/mini-parser/)
 
 dp (learning):
 
@@ -39,3 +40,12 @@ dp (learning):
 * https://www.nowcoder.com/practice/f9c6f980eeec43ef85be20755ddbeaf4?tpId=37&rp=1&ru=%2Fexam%2Foj%2Fta&qru=%2Fexam%2Foj%2Fta&sourceUrl=%2Fexam%2Foj%2Fta%3FtpId%3D37&difficulty=3&judgeStatus=&tags=&title=&gioEnter=menu  (华为HJ 购物单、01背包、条件限制)
 * [1049. 最后一块石头的重量 II](https://leetcode-cn.com/problems/last-stone-weight-ii/)
 
+
+
+
+
+#### [136. 只出现一次的数字](https://leetcode-cn.com/problems/single-number/)
+
+题意：给定一个**非空**整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。
+
+思路：异或运算

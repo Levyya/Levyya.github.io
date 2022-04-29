@@ -98,7 +98,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: yilia # hexo-theme-matery # icarus  # butterfly  # hexo-theme-matery
+theme: butterfly # yilia # hexo-theme-matery # icarus  # butterfly  # hexo-theme-matery
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
@@ -137,11 +137,11 @@ live2d:
     scale: 1
     hHeadPos: 0.5
     vHeadPos: 0.618
-    use: live2d-widget-model-miku  # live2d-widget-model-shizuku
+    use: live2d-widget-model-shizuku  # live2d-widget-model-miku  # live2d-widget-model-shizuku
   display:
     superSample: 2
-    width: 200
-    height: 300
+    width: 150
+    height: 250
     position: right
     hOffset: 0
     vOffset: -20
@@ -149,5 +149,5 @@ live2d:
     show: true
     scale: 0.5
   react:
-    opacityDefault: 0.7
-    opacityOnHover: 0.2
+    opacityDefault: 0.8
+    opacityOnHover: 0.4

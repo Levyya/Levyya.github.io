@@ -3,10 +3,10 @@
 # --------------------------------------
 
 menu:
-  # Home: / || fas fa-home
-  # Archives: /archives/ || fas fa-archive
-  # Tags: /tags/ || fas fa-tags
-  # Categories: /categories/ || fas fa-folder-open
+  Home: / || fas fa-home
+  Archives: /archives/ || fas fa-archive
+  Tags: /tags/ || fas fa-tags
+  Categories: /categories/ || fas fa-folder-open
   # List||fas fa-list:
   #   Music: /music/ || fas fa-music
   #   Movie: /movies/ || fas fa-video
@@ -60,14 +60,14 @@ local_search:
 
 # MathJax
 mathjax:
-  enable: false
-  per_page: false
+  enable: true
+  per_page: true
 
 # KaTeX
 katex:
-  enable: false
-  per_page: false
-  hide_scrollbar: true
+  enable: true
+  per_page: true
+  hide_scrollbar: false
 
 # Image (圖片設置)
 # --------------------------------------
@@ -149,10 +149,10 @@ post_meta:
 
 # wordcount (字數統計)
 wordcount:
-  enable: false
-  post_wordcount: true
-  min2read: true
-  total_wordcount: true
+  enable: false  # error
+  post_wordcount: false  # error!!
+  min2read: false  # error!
+  total_wordcount: false
 
 # Display the article introduction on homepage
 # 1: description
@@ -165,7 +165,7 @@ index_post_content:
 
 # anchor
 # when you scroll in post, the URL will update according to header id.
-anchor: false
+anchor: true
 
 # Post
 # --------------------------------------
@@ -394,7 +394,7 @@ crisp:
 footer:
   owner:
     enable: true
-    since: 2020
+    since: 2022
   custom_text:
   copyright: true # Copyright of theme and framework
 
@@ -545,13 +545,24 @@ click_heart:
 
 # Mouse click effects: words (鼠標點擊效果: 文字)
 ClickShowText:
-  enable: false
+  enable: true
   text:
-    # - I
-    # - LOVE
-    # - YOU
-  fontSize: 15px
-  random: false
+    # - 躺平🐦
+    - 好困
+    # - 别卷了
+    - 富强
+    - 公正
+    - 法治
+    - ❤️国
+    - 敬业
+    - 明主
+    - 友善
+    - 自由
+    - 平等
+    - 文明
+    - 和谐
+  fontSize: 20px
+  random: true
   mobile: false
 
 # Default display mode (網站默認的顯示模式)
@@ -621,10 +632,11 @@ aside:
       enable: true
       icon: fab fa-github
       text: Follow Me
-      link: https://github.com/xxxxxx
+      link: https://github.com/Levyya
   card_announcement:
     enable: true
-    content: This is my Blog
+    content: 
+      - 正经人谁写博客(qq:1091697485@qq.com)
   card_recent_post:
     enable: true
     limit: 5 # if set 0 will show all
@@ -638,7 +650,7 @@ aside:
   card_tags:
     enable: true
     limit: 40 # if set 0 will show all
-    color: false
+    color: true
     sort_order: # Don't modify the setting unless you know how it works
   card_archives:
     enable: true
@@ -780,7 +792,7 @@ snackbar:
 
 # https://instant.page/
 # prefetch (預加載)
-instantpage: false
+instantpage: true
 
 # https://github.com/vinta/pangu.js
 # Insert a space between Chinese character and English character (中英文之間添加空格)
@@ -791,7 +803,7 @@ pangu:
 # Lazyload (圖片懶加載)
 # https://github.com/verlok/vanilla-lazyload
 lazyload:
-  enable: false
+  enable: true
   field: site # site/post
   placeholder:
   blur: false
