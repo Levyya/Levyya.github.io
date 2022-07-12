@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Levy&#39;s blog</title>
+  
+  
+  <link href="https://levyya.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://levyya.github.io/"/>
+  <updated>2022-05-09T07:06:41.256Z</updated>
+  <id>https://levyya.github.io/</id>
+  
+  <author>
+    <name>Levy</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://levyya.github.io/2022/05/09/hello-world/"/>
+    <id>https://levyya.github.io/2022/05/09/hello-world/</id>
+    <published>2022-05-09T07:06:41.256Z</published>
+    <updated>2022-05-09T07:06:41.256Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>DEBERTA</title>
+    <link href="https://levyya.github.io/2022/04/28/DEBERTA/"/>
+    <id>https://levyya.github.io/2022/04/28/DEBERTA/</id>
+    <published>2022-04-28T12:31:35.000Z</published>
+    <updated>2022-05-09T07:06:41.150Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><p><a href="https://arxiv.org/abs/2111.09543">DeBERTaV3</a></p><h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>预训练模型在很多NLP任务上效果很好。作者提出DeBERTa（<strong>De</strong>coding-enhenced <strong>BERT</strong> with disentangled <strong>a</strong>ttention）：使用两种新技术改进BERT和RoBERTa。第一，<strong>分解注意力机制</strong>（disentangled attention mechanism），每个词语使用两个向量表示，分别编码词语的内容和位置，注意力权重基于词语和相对位置的矩阵分别计算。第二，<strong>增强的掩码解码器</strong>用来预测掩码标记，包含绝对位置信息。另外，提出一种新的虚拟对抗训练方法，用来微调和提升模型的生成能力。实验在NLU和NLG任务上表现很好。</p><h2 id="CODE"><a href="#CODE" class="headerlink" title="CODE"></a>CODE</h2><p><a href="https://github.com/microsoft/DeBERTa">https://github.com/microsoft/DeBERTa</a></p><p><a href="https://huggingface.co/models?filter=deberta">https://huggingface.co/models?filter=deberta</a></p><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>RNN -&gt; Transformers -&gt; GPT -&gt; BERT -&gt; RoBERTa -&gt; XLNet -&gt; UniLM -&gt; ELECTRA -&gt; T5 -&gt; ALUM -&gt; StructBERT -&gt; ERNIE</p><p>这篇论文提出两种改进技术：</p><h3 id="Disentangled-attention"><a href="#Disentangled-attention" class="headerlink" title="Disentangled attention"></a>Disentangled attention</h3><p>使用两个向量编码一个词语，分别表示内容和位置；注意力权重也分别有内容和位置矩阵计算得到。</p><h3 id="Enhanced-mask-decoder"><a href="#Enhanced-mask-decoder" class="headerlink" title="Enhanced mask decoder"></a>Enhanced mask decoder</h3><p>预训练任务仍使用掩语言模型（MLM）。在分解注意力机制中，DeBERTa使用上下文的内容和相对位置信息，但是没有使用绝对位置信息。“a new store opened beside the new mall“，store和mall语义上相同，但是语法角色不同，store是主语。这种语义关系依赖于词语的绝对位置。DeBERTa通过聚合上下文的词语内容和位置嵌入向量来引入绝对位置编码。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;更新&quot;&gt;&lt;a href=&quot;#更新&quot; class=&quot;headerlink&quot; title=&quot;更新&quot;&gt;&lt;/a&gt;更新&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://arxiv.org/abs/2111.09543&quot;&gt;DeBERTaV3&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;摘</summary>
+      
+    
+    
+    
+    
+    <category term="论文" scheme="https://levyya.github.io/tags/%E8%AE%BA%E6%96%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>paddle论文复现赛直播0428</title>
+    <link href="https://levyya.github.io/2022/04/28/paddle%E8%AE%BA%E6%96%87%E5%A4%8D%E7%8E%B0%E8%B5%9B%E7%9B%B4%E6%92%AD0428/"/>
+    <id>https://levyya.github.io/2022/04/28/paddle%E8%AE%BA%E6%96%87%E5%A4%8D%E7%8E%B0%E8%B5%9B%E7%9B%B4%E6%92%AD0428/</id>
+    <published>2022-04-28T11:55:40.000Z</published>
+    <updated>2022-05-09T07:06:41.257Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="特色模型挑战赛"><a href="#特色模型挑战赛" class="headerlink" title="特色模型挑战赛"></a>特色模型挑战赛</h2><p>复现+轻量化</p><p>![image-20220428191721659](&#x2F;Users&#x2F;levy&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20220428191721659.png)</p><p>![image-20220428191751696](&#x2F;Users&#x2F;levy&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20220428191751696.png)</p><p>![image-20220428194228297](&#x2F;Users&#x2F;levy&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20220428194228297.png)</p><p>![image-20220428194840986](&#x2F;Users&#x2F;levy&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20220428194840986.png)</p><p>![image-20220428195520949](&#x2F;Users&#x2F;levy&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20220428195520949.png)</p><p>轻量化模型</p><ul><li>LCNet</li><li>MobileNet</li></ul><p>量化技巧：</p><ul><li>量化conv2d, linear</li><li>不要量化BN</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;特色模型挑战赛&quot;&gt;&lt;a href=&quot;#特色模型挑战赛&quot; class=&quot;headerlink&quot; title=&quot;特色模型挑战赛&quot;&gt;&lt;/a&gt;特色模型挑战赛&lt;/h2&gt;&lt;p&gt;复现+轻量化&lt;/p&gt;
+&lt;p&gt;![image-20220428191721659](&amp;#x2F;Use</summary>
+      
+    
+    
+    
+    
+    <category term="比赛" scheme="https://levyya.github.io/tags/%E6%AF%94%E8%B5%9B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Learning Knowledge Graph Embedding With Heterogeneous Relation Attention Networks</title>
+    <link href="https://levyya.github.io/2022/04/28/Learning-Knowledge-Graph-Embedding-With-Heterogeneous-Relation-Attention-Networks/"/>
+    <id>https://levyya.github.io/2022/04/28/Learning-Knowledge-Graph-Embedding-With-Heterogeneous-Relation-Attention-Networks/</id>
+    <published>2022-04-28T09:03:52.000Z</published>
+    <updated>2022-05-09T07:06:41.153Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>知识图谱（KG）嵌入旨在学习嵌入表示来获取知识图谱的内在结构。图神经网络（GNN）展示了它在学习图嵌入的优异性能。然🦢，KGs包含了多种类型的实体和关系。如何处理复杂图数据和同时聚合多种类型的语义信息是一个关键问题。作者提出一种基于注意力机制的多类别GNN框架。具体地，实体的相邻特征在每一个关系路径下聚合。然后通过关系特征学习不同关系路径的重要性。最后，每个基于关系路径的特征和学习到的权重被聚合去生产嵌入表示。因此，提出的方法不仅聚合了来自不同语义方面的实体特征</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h2&gt;&lt;p&gt;知识图谱（KG）嵌入旨在学习嵌入表示来获取知识图谱的内在结构。图神经网络（GNN）展示了它在学习图嵌入的优异性能。然🦢，KGs包含了多种类</summary>
+      
+    
+    
+    
+    
+    <category term="论文" scheme="https://levyya.github.io/tags/%E8%AE%BA%E6%96%87/"/>
+    
+    <category term="知识图谱" scheme="https://levyya.github.io/tags/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Deep Position-wise Interaction Network for CTR Prediction</title>
+    <link href="https://levyya.github.io/2022/04/26/Deep-Position-wise-Interaction-Network-for-CTR-Prediction/"/>
+    <id>https://levyya.github.io/2022/04/26/Deep-Position-wise-Interaction-Network-for-CTR-Prediction/</id>
+    <published>2022-04-26T13:21:39.000Z</published>
+    <updated>2022-05-09T07:06:41.152Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://arxiv.org/pdf/2106.05482v2.pdf">论文地址</a></p><p>论文作者：美团 Jianqiang Huang</p><p>了解来源：百度飞浆论文复现赛</p><p>关键字：搜索广告；CTR预估；</p><h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><p>点击通过率（CTR，Click-through rate）在网络广告和推荐系统中扮演很重要的角色。实际上，训练CTR模型取决于点击数据，模型会偏向更高位置，实际上更高位置确实有更高的CTR。现在的方法可以通过【IPW, inverse propensity weighting】方法在一定程度上缓解这个偏差问题。然而，位置信息在训练时和推理时的不同处理方式会影响线上性能。而且，点击率是【】和【】的乘积的假设过于简单。这里提出DPIN（Deep Position-wise Interaction Network）去结合标的物和位置信息去估计每个位置的CTR，实现balabala的一致性和模拟xx之间的深度非线性交互作用。这里还提出一种新的评估尺度，PAUC（postion-wise AUC），适合评估给定位置的排序质量。通过实验验证了方法的有效性。</p><h3 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h3><p>1段：CTR很重要。</p><p>2段：然而，位置偏差影响了模型性能。</p><p>3段：现有方法处理位置偏差问题。【位置作为特征、PAL框架、IPW、知识蒸馏、对抗NN、成对训练】</p><p>4段：点击伯努力变量C（click Bernoulli variable C）：<br>$$<br>p(C&#x3D;1|u,c,i,k)&#x3D;p(E&#x3D;1|k,[s])p(R&#x3D;1|u,c,i)<br>$$</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">u: user; c: context; i: item i; k: k-th position;</span></span><br><span class="line"><span class="string">C: click; E: examined; R: relevent; [s]: subset of context;</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure><p>5段：examination assumption 过于简单。</p><p>6段：论文贡献点：</p><ul><li>DPIN</li><li>DPIN is the first method…</li><li>PAUC</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://arxiv.org/pdf/2106.05482v2.pdf&quot;&gt;论文地址&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;论文作者：美团 Jianqiang Huang&lt;/p&gt;
+&lt;p&gt;了解来源：百度飞浆论文复现赛&lt;/p&gt;
+&lt;p&gt;关键字：搜索广告；CTR预估；&lt;/p&gt;</summary>
+      
+    
+    
+    
+    <category term="计算机" scheme="https://levyya.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    
+    <category term="论文" scheme="https://levyya.github.io/tags/%E8%AE%BA%E6%96%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Tensorflow实战</title>
+    <link href="https://levyya.github.io/2022/04/25/Tensorflow%E5%AE%9E%E6%88%98/"/>
+    <id>https://levyya.github.io/2022/04/25/Tensorflow%E5%AE%9E%E6%88%98/</id>
+    <published>2022-04-25T12:37:40.000Z</published>
+    <updated>2022-05-09T07:06:41.191Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="加载和预处理数据"><a href="#加载和预处理数据" class="headerlink" title="加载和预处理数据"></a>加载和预处理数据</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;加载和预处理数据&quot;&gt;&lt;a href=&quot;#加载和预处理数据&quot; class=&quot;headerlink&quot; title=&quot;加载和预处理数据&quot;&gt;&lt;/a&gt;加载和预处理数据&lt;/h2&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td c</summary>
+      
+    
+    
+    
+    
+    <category term="Deep Learning" scheme="https://levyya.github.io/tags/Deep-Learning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SimCSE</title>
+    <link href="https://levyya.github.io/2022/04/25/SimCSE/"/>
+    <id>https://levyya.github.io/2022/04/25/SimCSE/</id>
+    <published>2022-04-25T09:59:40.000Z</published>
+    <updated>2022-05-09T07:06:41.190Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://arxiv.org/pdf/2104.08821.pdf">论文地址</a></p><h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>SimCSE，一种简单的对抗学习框架，提升句子词嵌入到SOTA。首先描述了一种无监督方法，仅使用标准dropout作为扰动，在对抗任务中输入句子并预测它自己。这种简单的方法效果出奇的好，甚至与对应的监督方法相当。作者发现dropout作用是数据增强，移除它会导致表示坍塌。还提出一种监督方法，从NLI数据集中引入注释句子对，用蕴含对作为正例，用矛盾对作为反例。作者评估SimCSE在文本语义相似度（Semantic textual similarity, STS）任务上，使用BERT_base实现很好的结果。作者从理论和实验上展示对抗学习令预训练词嵌入空间更uniform，有监督标签时能更好对齐正例句子对。</p><h2 id="对抗学习"><a href="#对抗学习" class="headerlink" title="对抗学习"></a>对抗学习</h2><p>数据增强</p><ul><li>Crop 裁剪</li><li>Word deletion 删除单词</li><li>Synonym replacement 同义词替换</li><li>MLM</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://arxiv.org/pdf/2104.08821.pdf&quot;&gt;论文地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h2&gt;&lt;p&gt;SimCSE，</summary>
+      
+    
+    
+    
+    
+    <category term="论文" scheme="https://levyya.github.io/tags/%E8%AE%BA%E6%96%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>“卷积神经网络”</title>
+    <link href="https://levyya.github.io/2022/04/25/%E2%80%9C%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E2%80%9D/"/>
+    <id>https://levyya.github.io/2022/04/25/%E2%80%9C%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E2%80%9D/</id>
+    <published>2022-04-25T08:15:47.000Z</published>
+    <updated>2022-05-09T07:06:41.259Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h5 id="卷积核"><a href="#卷积核" class="headerlink" title="卷积核"></a>卷积核</h5><h5 id="感受野"><a href="#感受野" class="headerlink" title="感受野"></a>感受野</h5><p>对于某层输出特征图上的某个点，在网络原始输入数据上能影响这个点的取值的区域。</p><h5 id="特征图"><a href="#特征图" class="headerlink" title="特征图"></a>特征图</h5><h2 id="卷积的变种"><a href="#卷积的变种" class="headerlink" title="卷积的变种"></a>卷积的变种</h2><h5 id="分组卷积"><a href="#分组卷积" class="headerlink" title="分组卷积"></a>分组卷积</h5><h5 id="转置卷积"><a href="#转置卷积" class="headerlink" title="转置卷积"></a>转置卷积</h5><h5 id="空洞卷积"><a href="#空洞卷积" class="headerlink" title="空洞卷积"></a>空洞卷积</h5><h5 id="可变形卷积"><a href="#可变形卷积" class="headerlink" title="可变形卷积"></a>可变形卷积</h5><h2 id="CNN结构"><a href="#CNN结构" class="headerlink" title="CNN结构"></a>CNN结构</h2><h5 id="AlexNet"><a href="#AlexNet" class="headerlink" title="AlexNet"></a>AlexNet</h5><h5 id="VGGNet"><a href="#VGGNet" class="headerlink" title="VGGNet"></a>VGGNet</h5><h5 id="Inception"><a href="#Inception" class="headerlink" title="Inception"></a>Inception</h5><h5 id="ResNet"><a href="#ResNet" class="headerlink" title="ResNet"></a>ResNet</h5>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;基本概念&quot;&gt;&lt;a href=&quot;#基本概念&quot; class=&quot;headerlink&quot; title=&quot;基本概念&quot;&gt;&lt;/a&gt;基本概念&lt;/h2&gt;&lt;h5 id=&quot;卷积核&quot;&gt;&lt;a href=&quot;#卷积核&quot; class=&quot;headerlink&quot; title=&quot;卷积核&quot;&gt;&lt;/a&gt;卷积</summary>
+      
+    
+    
+    
+    
+    <category term="Deep Learning" scheme="https://levyya.github.io/tags/Deep-Learning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>买卖股票的最好时机（三）</title>
+    <link href="https://levyya.github.io/2022/04/25/%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E5%A5%BD%E6%97%B6%E6%9C%BA%EF%BC%88%E4%B8%89%EF%BC%89/"/>
+    <id>https://levyya.github.io/2022/04/25/%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E5%A5%BD%E6%97%B6%E6%9C%BA%EF%BC%88%E4%B8%89%EF%BC%89/</id>
+    <published>2022-04-25T07:08:41.000Z</published>
+    <updated>2022-05-09T07:06:41.292Z</updated>
+    
+    <content type="html"><![CDATA[<h5 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h5><p>最多只能对股票进行两次交易操作，且第二次购买时需卖出之前的股票。</p><h5 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h5><p>dp[i][0]表示第i天未购买股票的最大利润；</p><p>dp[i][1]表示第i天购买一次股票的最大利润；</p><p>dp[i][2]表示第i天卖出一次股票的最大利润；</p><p>dp[i][3]表示第i天购买两次股票的最大利润；</p><p>dp[i][4]表示第i天卖出两次股票的最大利润；</p><p>初始：dp[0][0] &#x3D; 0, dp[0][1] &#x3D; -prices[1];</p><p>递推公式：</p><p>dp[i][1] &#x3D; max(dp[i-1][0] - prices[i], dp[i-1][1]);</p><p>dp[i][2] &#x3D; max(dp[i-1][1] + prices[i], dp[i-1][2]);</p><p>dp[i][3] &#x3D; max(dp[i-1][2] - prices[i], dp[i-1][3]);</p><p>dp[i][4] &#x3D; max(dp[i-1][3] + prices[i], dp[i-1][4]);</p><p>结果：</p><p>可能为第0次、第一次卖出、第二次卖出时的最大利润。</p><h5 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">maxProfit</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; prices)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> n = prices.<span class="built_in">size</span>();</span><br><span class="line">        vector&lt;vector&lt;<span class="type">int</span>&gt; &gt; <span class="built_in">dp</span>(n, <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(<span class="number">5</span>, <span class="number">-10005</span>));</span><br><span class="line">        dp[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">0</span>, dp[<span class="number">0</span>][<span class="number">1</span>] = -prices[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">            dp[i][<span class="number">0</span>] = dp[i<span class="number">-1</span>][<span class="number">0</span>];</span><br><span class="line">            dp[i][<span class="number">1</span>] = <span class="built_in">max</span>(dp[i<span class="number">-1</span>][<span class="number">1</span>], dp[i<span class="number">-1</span>][<span class="number">0</span>] - prices[i]);</span><br><span class="line">            dp[i][<span class="number">2</span>] = <span class="built_in">max</span>(dp[i<span class="number">-1</span>][<span class="number">2</span>], dp[i<span class="number">-1</span>][<span class="number">1</span>] - prices[i]);</span><br><span class="line">            dp[i][<span class="number">3</span>] = <span class="built_in">max</span>(dp[i<span class="number">-1</span>][<span class="number">3</span>], dp[i<span class="number">-1</span>][<span class="number">2</span>] - prices[i]);</span><br><span class="line">            dp[i][<span class="number">4</span>] = <span class="built_in">max</span>(dp[i<span class="number">-1</span>][<span class="number">4</span>], dp[i<span class="number">-1</span>][<span class="number">3</span>] - prices[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> maxi = <span class="number">0</span>;</span><br><span class="line">        maxi = <span class="built_in">max</span>(dp[n<span class="number">-1</span>][<span class="number">0</span>], <span class="built_in">max</span>(dp[n<span class="number">-1</span>][<span class="number">2</span>], dp[n<span class="number">-1</span>][<span class="number">4</span>]));</span><br><span class="line">        <span class="keyword">return</span> maxi;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h5 id=&quot;描述&quot;&gt;&lt;a href=&quot;#描述&quot; class=&quot;headerlink&quot; title=&quot;描述&quot;&gt;&lt;/a&gt;描述&lt;/h5&gt;&lt;p&gt;最多只能对股票进行两次交易操作，且第二次购买时需卖出之前的股票。&lt;/p&gt;
+&lt;h5 id=&quot;思路&quot;&gt;&lt;a href=&quot;#思路&quot; class=&quot;</summary>
+      
+    
+    
+    
+    
+    <category term="algorithm" scheme="https://levyya.github.io/tags/algorithm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>腾讯笔试20220424_算法</title>
+    <link href="https://levyya.github.io/2022/04/25/%E8%85%BE%E8%AE%AF%E7%AC%94%E8%AF%9520220424-%E7%AE%97%E6%B3%95/"/>
+    <id>https://levyya.github.io/2022/04/25/%E8%85%BE%E8%AE%AF%E7%AC%94%E8%AF%9520220424-%E7%AE%97%E6%B3%95/</id>
+    <published>2022-04-25T02:05:28.000Z</published>
+    <updated>2022-05-09T07:06:41.342Z</updated>
+    
+    <content type="html"><![CDATA[<p>代码来源：</p><p><a href="https://www.nowcoder.com/discuss/940901?channel=-1&amp;source_id=profile_follow_post_nctrack">https://www.nowcoder.com/discuss/940901?channel=-1&amp;source_id=profile_follow_post_nctrack</a></p><h5 id="下注"><a href="#下注" class="headerlink" title="下注"></a>下注</h5><p>$$<br>(n + x)(1-p)&#x3D;n\<br>n为上一次下注金额，x为跟注金额\<br>x &#x3D; \frac{np}{1-p} \quad or \quad n_{i+1} &#x3D; \frac{n_i}{1-p}<br>$$</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="type">long</span> <span class="type">long</span> n, m;</span><br><span class="line">cin &gt;&gt; n &gt;&gt; m;</span><br><span class="line"><span class="type">long</span> <span class="type">long</span> ans = n;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line"><span class="type">double</span> p;</span><br><span class="line">cin &gt;&gt; p;</span><br><span class="line"><span class="type">double</span> jia = (<span class="type">double</span>)ans * p / (<span class="number">1.0</span> - p);</span><br><span class="line"><span class="keyword">if</span> (jia - (<span class="type">long</span> <span class="type">long</span>)jia &lt; <span class="number">1e-6</span>) &#123;</span><br><span class="line">jia -= <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line">ans = ans + jia;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h5 id="全连接层（张量计算）"><a href="#全连接层（张量计算）" class="headerlink" title="全连接层（张量计算）"></a>全连接层（张量计算）</h5><p>A为c*c矩阵，f为c*1向量，求Af的最大值对应索引（从0开始）</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1e4</span> + <span class="number">7</span>;</span><br><span class="line"><span class="type">double</span> f[N], a[N][N], ans[N];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="type">int</span> c;</span><br><span class="line">cin &gt;&gt; c;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; c; i++) &#123;</span><br><span class="line">cin &gt;&gt; f[i];</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; c; i++) &#123;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; c; j++) &#123;</span><br><span class="line">cin &gt;&gt; a[i][j];</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> max_id = <span class="number">0</span>;</span><br><span class="line"><span class="type">double</span> max_val = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; c; i++) &#123;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; c; j++) &#123;</span><br><span class="line">ans[i] += a[i][j] * f[j];</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (ans[i] &gt; max_val) &#123;</span><br><span class="line">max_val = ans[i];</span><br><span class="line">max_id = i;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">cout &lt;&lt; max_id;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h5 id="一元三次方根"><a href="#一元三次方根" class="headerlink" title="一元三次方根"></a>一元三次方根</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="type">int</span> q;</span><br><span class="line"><span class="type">long</span> <span class="type">double</span> a, b, c;</span><br><span class="line">cin &gt;&gt; q;</span><br><span class="line"><span class="keyword">while</span> (q--) &#123;</span><br><span class="line">cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;</span><br><span class="line"><span class="type">long</span> <span class="type">double</span> l = <span class="number">1e-8</span>, r = <span class="number">2e9</span>;</span><br><span class="line"><span class="type">int</span> f = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span> (r - l &gt; <span class="number">1e-8</span>) &#123;</span><br><span class="line"><span class="type">long</span> <span class="type">double</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line"><span class="type">long</span> <span class="type">double</span> res = <span class="built_in">pow</span>(mid, <span class="number">3</span>) + a * <span class="built_in">pow</span>(mid, <span class="number">2</span>) + b * mid - c;</span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">abs</span>(res) &lt; <span class="number">1e-8</span>) &#123;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%.8llf\n&quot;</span>, mid);</span><br><span class="line">f = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">break</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (res &lt; <span class="number">1e-8</span>) &#123;</span><br><span class="line">l = mid;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">r = mid;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (f == <span class="number">0</span>) &#123;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%.8llf\n&quot;</span>, l);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h5 id="区间染色"><a href="#区间染色" class="headerlink" title="区间染色"></a>区间染色</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">2e5</span> + <span class="number">7</span>;</span><br><span class="line"><span class="type">long</span> <span class="type">long</span> a[N], b[N];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="type">int</span> n, m, q;</span><br><span class="line">cin &gt;&gt; n &gt;&gt; m;</span><br><span class="line"><span class="type">long</span> <span class="type">long</span> ans1 = <span class="number">0</span>, ans2 = <span class="number">0</span>, ans3 = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">cin &gt;&gt; a[i];</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">cin &gt;&gt; b[i];</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">sort</span>(a, a + n);</span><br><span class="line"><span class="built_in">sort</span>(b, b + m);</span><br><span class="line">cin &gt;&gt; q;</span><br><span class="line"><span class="type">int</span> l, r;</span><br><span class="line"><span class="keyword">while</span> (q--) &#123;</span><br><span class="line">cin &gt;&gt; l &gt;&gt; r;</span><br><span class="line"><span class="type">long</span> <span class="type">long</span> *ll = <span class="built_in">lower_bound</span>(a, a + n, l);</span><br><span class="line"><span class="type">long</span> <span class="type">long</span> *rr = <span class="built_in">lower_bound</span>(a, a + n, r);</span><br><span class="line"><span class="type">long</span> <span class="type">long</span> suma = rr - ll;</span><br><span class="line"><span class="keyword">if</span> (*rr == r) &#123;</span><br><span class="line">suma++;</span><br><span class="line">&#125;</span><br><span class="line">ll = <span class="built_in">lower_bound</span>(b, b + m, l);</span><br><span class="line">rr = <span class="built_in">lower_bound</span>(b, b + m, r);</span><br><span class="line"><span class="type">long</span> <span class="type">long</span> sumb = rr - ll;</span><br><span class="line"><span class="keyword">if</span> (*rr == r) &#123;</span><br><span class="line">sumb++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (suma == sumb) &#123;</span><br><span class="line">ans2++;</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (suma &gt; sumb) &#123;</span><br><span class="line">ans1++;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">ans3++;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d %d %d\n&quot;</span>, ans1, ans2, ans3);</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h5 id="公共数链"><a href="#公共数链" class="headerlink" title="公共数链"></a>公共数链</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">ListNode</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, x</span>):</span><br><span class="line">        self.val = x</span><br><span class="line">        self.<span class="built_in">next</span> = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">TreeNode</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, x</span>):</span><br><span class="line">        self.val = x</span><br><span class="line">        self.left = <span class="literal">None</span></span><br><span class="line">        self.right = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">solve</span>(<span class="params">self, root, b</span>):</span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">getParent</span>(<span class="params">node, x, y</span>):</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> node:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">            <span class="keyword">if</span> node.val == x <span class="keyword">or</span> node.val == y:</span><br><span class="line">                <span class="keyword">return</span> node</span><br><span class="line">            left = getParent(node.left, x, y)</span><br><span class="line">            right = getParent(node.right, x, y)</span><br><span class="line">            <span class="keyword">if</span> left <span class="keyword">and</span> right:</span><br><span class="line">                <span class="keyword">return</span> node</span><br><span class="line">            <span class="keyword">elif</span> left:</span><br><span class="line">                <span class="keyword">return</span> left</span><br><span class="line">            <span class="keyword">elif</span> right:</span><br><span class="line">                <span class="keyword">return</span> right</span><br><span class="line"></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">dfs</span>(<span class="params">node, target, res</span>):</span><br><span class="line">            <span class="keyword">nonlocal</span> path</span><br><span class="line">            <span class="keyword">if</span> path:</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> node:</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">            res.append(node.val)</span><br><span class="line">            <span class="keyword">if</span> node.val == target:</span><br><span class="line">                path = res[:]</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">            dfs(node.left, target, res)</span><br><span class="line">            dfs(node.right, target, res)</span><br><span class="line">            res.pop()</span><br><span class="line"></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">getSame</span>(<span class="params">list1, list2</span>):</span><br><span class="line">            res = []</span><br><span class="line">            list2 = <span class="built_in">set</span>(list2)</span><br><span class="line">            <span class="keyword">for</span> node <span class="keyword">in</span> list1:</span><br><span class="line">                <span class="keyword">if</span> node <span class="keyword">in</span> list2:</span><br><span class="line">                    res.append(ListNode(node))</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> res:</span><br><span class="line">                <span class="keyword">return</span> res</span><br><span class="line">            flag = <span class="literal">False</span></span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(res)):</span><br><span class="line">                j = <span class="built_in">len</span>(res) - <span class="number">1</span> - i</span><br><span class="line">                <span class="keyword">if</span> res[i].val == res[j].val:</span><br><span class="line">                    <span class="keyword">continue</span></span><br><span class="line">                <span class="keyword">elif</span> res[i].val &lt; res[j].val:</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    flag = <span class="literal">True</span></span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">if</span> flag:</span><br><span class="line">                res = res[::-<span class="number">1</span>]</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(res) - <span class="number">1</span>):</span><br><span class="line">                res[i].<span class="built_in">next</span> = res[i+<span class="number">1</span>]</span><br><span class="line">            <span class="keyword">return</span> res[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">printAns</span>(<span class="params">ans</span>):</span><br><span class="line">            <span class="keyword">for</span> ele <span class="keyword">in</span> ans:</span><br><span class="line">                <span class="keyword">while</span> ele:</span><br><span class="line">                    <span class="built_in">print</span>(ele.val, end=<span class="string">&#x27; &#x27;</span>)</span><br><span class="line">                    ele = ele.<span class="built_in">next</span></span><br><span class="line">                <span class="built_in">print</span>()</span><br><span class="line"></span><br><span class="line">        ans = [<span class="literal">None</span>] * <span class="built_in">len</span>(b)</span><br><span class="line">        <span class="keyword">for</span> i, (x, y, u, v) <span class="keyword">in</span> <span class="built_in">enumerate</span>(b):</span><br><span class="line">            p1 = getParent(root, x, y)</span><br><span class="line">            path = []</span><br><span class="line">            dfs(p1, x, [])</span><br><span class="line">            res1 = path[:]</span><br><span class="line">            path = []</span><br><span class="line">            dfs(p1, y, [])</span><br><span class="line">            res2 = path[:]</span><br><span class="line">            res00 = res1[::-<span class="number">1</span>] + res2[<span class="number">1</span>:]</span><br><span class="line"></span><br><span class="line">            p2 = getParent(root, u, v)</span><br><span class="line">            path = []</span><br><span class="line">            dfs(p2, u, [])</span><br><span class="line">            res3 = path[:]</span><br><span class="line">            path = []</span><br><span class="line">            dfs(p2, v, [])</span><br><span class="line">            res4 = path[:]</span><br><span class="line">            res11 = res3[::-<span class="number">1</span>] + res4[<span class="number">1</span>:]</span><br><span class="line">            ans[i] = getSame(res00, res11)</span><br><span class="line">        printAns(ans)</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;代码来源：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.nowcoder.com/discuss/940901?channel=-1&amp;amp;source_id=profile_follow_post_nctrack&quot;&gt;https://www.nowcoder.</summary>
+      
+    
+    
+    
+    
+    <category term="笔试" scheme="https://levyya.github.io/tags/%E7%AC%94%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>并查集</title>
+    <link href="https://levyya.github.io/2022/04/24/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
+    <id>https://levyya.github.io/2022/04/24/%E5%B9%B6%E6%9F%A5%E9%9B%86/</id>
+    <published>2022-04-24T08:41:06.000Z</published>
+    <updated>2022-05-09T07:06:41.294Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> parents[n+<span class="number">1</span>];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">find</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> parents[x] == x ? x : parents[x] = <span class="built_in">find</span>(parents[x]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">merge</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> fx = <span class="built_in">find</span>(x), fy = <span class="built_in">find</span>(y);</span><br><span class="line">    <span class="keyword">if</span> (fx != fy) &#123;</span><br><span class="line">        parents[fy] = fx</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;figure class=&quot;highlight c++&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;</summary>
+      
+    
+    
+    
+    
+    <category term="algorithm" scheme="https://levyya.github.io/tags/algorithm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu uninstall</title>
+    <link href="https://levyya.github.io/2022/04/16/Ubuntu-uninstall/"/>
+    <id>https://levyya.github.io/2022/04/16/Ubuntu-uninstall/</id>
+    <published>2022-04-16T03:14:01.000Z</published>
+    <updated>2022-05-09T07:06:41.224Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dpgk --list |grep app-name</span><br><span class="line">sudo apt-get [--purge] remove pkg-name</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;</summary>
+      
+    
+    
+    
+    
+    <category term="linux" scheme="https://levyya.github.io/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>百面机器学习</title>
+    <link href="https://levyya.github.io/2022/04/15/%E7%99%BE%E9%9D%A2%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    <id>https://levyya.github.io/2022/04/15/%E7%99%BE%E9%9D%A2%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</id>
+    <published>2022-04-15T02:41:39.000Z</published>
+    <updated>2022-05-09T07:06:41.316Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="一、特征工程"><a href="#一、特征工程" class="headerlink" title="一、特征工程"></a>一、特征工程</h2><h2 id="二、模型评估"><a href="#二、模型评估" class="headerlink" title="二、模型评估"></a>二、模型评估</h2>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;一、特征工程&quot;&gt;&lt;a href=&quot;#一、特征工程&quot; class=&quot;headerlink&quot; title=&quot;一、特征工程&quot;&gt;&lt;/a&gt;一、特征工程&lt;/h2&gt;&lt;h2 id=&quot;二、模型评估&quot;&gt;&lt;a href=&quot;#二、模型评估&quot; class=&quot;headerlink&quot; titl</summary>
+      
+    
+    
+    
+    
+    <category term="面试、机器学习" scheme="https://levyya.github.io/tags/%E9%9D%A2%E8%AF%95%E3%80%81%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>wordnet</title>
+    <link href="https://levyya.github.io/2022/04/12/wordnet/"/>
+    <id>https://levyya.github.io/2022/04/12/wordnet/</id>
+    <published>2022-04-12T07:09:53.000Z</published>
+    <updated>2022-05-09T07:06:41.258Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="wordnet介绍"><a href="#wordnet介绍" class="headerlink" title="wordnet介绍"></a>wordnet介绍</h2><p><a href="https://wordnet.princeton.edu/">wordnet</a>是大规模的英文词汇数据库，按<strong>同义词集</strong>将<strong>名词、动词、形容词、副词</strong>分成不同组。</p><p><a href="https://wordnet.princeton.edu/documentation/senseidx5wn">senseidx</a>提供了访问WordNet数据库中的同义词集和词义的另一种方法:</p><p>sense key</p><blockquote><p><em>lemma</em> <strong>%</strong> <em>lex_sense</em></p><p><em>lex_sense</em>: ss_type:lex_filenum:lex_id:head_word:head_id</p></blockquote><h2 id="使用NLTK库中的wordnet"><a href="#使用NLTK库中的wordnet" class="headerlink" title="使用NLTK库中的wordnet"></a>使用NLTK库中的wordnet</h2><p>关于wordnet的下载，可能会遇到一些麻烦（外网的缘故），可能需要自动手动去官网下载。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> nltk.corpus <span class="keyword">import</span> wordnet <span class="keyword">as</span> wn</span><br></pre></td></tr></table></figure><p>常用：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 获取一个单词的同义词集</span></span><br><span class="line">wn.synsets(<span class="string">&#x27;dog&#x27;</span>)  <span class="comment"># -&gt; List[Synset]</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">[Synset(&#x27;dog.n.01&#x27;),</span></span><br><span class="line"><span class="string"> Synset(&#x27;frump.n.01&#x27;),</span></span><br><span class="line"><span class="string"> Synset(&#x27;dog.n.03&#x27;),</span></span><br><span class="line"><span class="string"> Synset(&#x27;cad.n.01&#x27;),</span></span><br><span class="line"><span class="string"> Synset(&#x27;frank.n.02&#x27;),</span></span><br><span class="line"><span class="string"> Synset(&#x27;pawl.n.01&#x27;),</span></span><br><span class="line"><span class="string"> Synset(&#x27;andiron.n.01&#x27;),</span></span><br><span class="line"><span class="string"> Synset(&#x27;chase.v.01&#x27;)]</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="comment"># 获取一个单词的同义词集对应的词根</span></span><br><span class="line">wn.lemmas(<span class="string">&#x27;seek&#x27;</span>)  <span class="comment"># -&gt; List[Lemma]</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">[Lemma(&#x27;seek.n.01.seek&#x27;),</span></span><br><span class="line"><span class="string"> Lemma(&#x27;seek.v.01.seek&#x27;),</span></span><br><span class="line"><span class="string"> Lemma(&#x27;search.v.01.seek&#x27;),</span></span><br><span class="line"><span class="string"> Lemma(&#x27;try.v.01.seek&#x27;),</span></span><br><span class="line"><span class="string"> Lemma(&#x27;seek.v.04.seek&#x27;),</span></span><br><span class="line"><span class="string"> Lemma(&#x27;seek.v.05.seek&#x27;)]</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="comment"># 获取词根对应的senseidx</span></span><br><span class="line">wn.lemma(<span class="string">&#x27;seek.v.01.seek&#x27;</span>).key()  <span class="comment"># -&gt; sense_key: ss_type:lex_filenum:lex_id:head_word:head_id</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">&#x27;seek%2:40:00::</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="comment"># 获取对应的释义</span></span><br><span class="line">wn.lemma(<span class="string">&#x27;seek.v.01.seek&#x27;</span>).synset().definition()  <span class="comment"># -&gt; str</span></span><br><span class="line">wn.synset(<span class="string">&#x27;seek.v.01&#x27;</span>).definition()  <span class="comment"># -&gt; str</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">&#x27;try to get or reach&#x27;</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure><h2 id="几个重要的网站"><a href="#几个重要的网站" class="headerlink" title="几个重要的网站"></a>几个重要的网站</h2><p><a href="https://www.nltk.org/api/nltk.corpus.reader.wordnet.html?highlight=wordnet#module-nltk.corpus.reader.wordnet">nltk官网</a></p><p><a href="https://wordnet.princeton.edu/">wordnet官网</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;wordnet介绍&quot;&gt;&lt;a href=&quot;#wordnet介绍&quot; class=&quot;headerlink&quot; title=&quot;wordnet介绍&quot;&gt;&lt;/a&gt;wordnet介绍&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://wordnet.princeton.edu/&quot;&gt;w</summary>
+      
+    
+    
+    
+    
+    <category term="NLP" scheme="https://levyya.github.io/tags/NLP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>OJ丑数</title>
+    <link href="https://levyya.github.io/2022/03/29/OJ%E4%B8%91%E6%95%B0/"/>
+    <id>https://levyya.github.io/2022/03/29/OJ%E4%B8%91%E6%95%B0/</id>
+    <published>2022-03-29T03:10:02.000Z</published>
+    <updated>2022-05-09T07:06:41.156Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li><p>最小堆</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">nthUglyNum</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; factors = &#123;<span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>&#125;;</span><br><span class="line">    unordered_set&lt;<span class="type">long</span>&gt; seen;</span><br><span class="line">    priority_queue&lt;<span class="type">long</span>, vector&lt;<span class="type">long</span>&gt;, greater&lt;<span class="type">long</span>&gt;&gt; heap;</span><br><span class="line">    seen.<span class="built_in">insert</span>(<span class="number">1L</span>);</span><br><span class="line">    heap.<span class="built_in">push</span>(<span class="number">1L</span>);</span><br><span class="line">    <span class="type">int</span> ugly = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="type">long</span> cur = heap.<span class="built_in">top</span>();</span><br><span class="line">        heap.<span class="built_in">pop</span>();</span><br><span class="line">        ugly = (<span class="type">int</span>)cur;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> factor : facotrs) &#123;</span><br><span class="line">            <span class="type">long</span> next = cur * factor;</span><br><span class="line">            <span class="keyword">if</span> (!seen.<span class="built_in">count</span>(next)) &#123;</span><br><span class="line">                seen.<span class="built_in">insert</span>(next);</span><br><span class="line">                heap.<span class="built_in">push</span>(next);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ugly;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;最小堆&lt;/p&gt;
+&lt;figure class=&quot;highlight c++&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/sp</summary>
+      
+    
+    
+    
+    
+    <category term="algorithm" scheme="https://levyya.github.io/tags/algorithm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>OJ剑指offer22. 正则表达式匹配</title>
+    <link href="https://levyya.github.io/2022/03/22/OJ%E5%89%91%E6%8C%87offer22-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D/"/>
+    <id>https://levyya.github.io/2022/03/22/OJ%E5%89%91%E6%8C%87offer22-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D/</id>
+    <published>2022-03-22T12:05:22.000Z</published>
+    <updated>2022-05-09T07:06:41.187Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">isMatch</span><span class="params">(string s, string p)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> m = s.<span class="built_in">size</span>();</span><br><span class="line">    <span class="type">int</span> n = p.<span class="built_in">size</span>();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">auto</span> matches = [&amp;](<span class="type">int</span> i, <span class="type">int</span> j) &#123;</span><br><span class="line">        <span class="keyword">if</span> (i == <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">if</span> (p[j<span class="number">-1</span>] == <span class="string">&#x27;.&#x27;</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">return</span> s[i<span class="number">-1</span>] == p[j<span class="number">-1</span>];</span><br><span class="line">    &#125;;</span><br><span class="line">    </span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt; &gt; <span class="built_in">f</span>(m + <span class="number">1</span>, <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(n + <span class="number">1</span>));</span><br><span class="line">    f[<span class="number">0</span>][<span class="number">0</span>] = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= m; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt;= n; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (p[j<span class="number">-1</span>] == <span class="string">&#x27;*&#x27;</span>) &#123;</span><br><span class="line">                f[i][j] |= f[i][j<span class="number">-2</span>];</span><br><span class="line">                <span class="keyword">if</span> (<span class="built_in">mathes</span>(i, j - <span class="number">1</span>)) &#123;</span><br><span class="line">                    f[i][j] |= f[i<span class="number">-1</span>][j];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (<span class="built_in">matches</span>(i, j)) &#123;</span><br><span class="line">                    f[i][j] |== f[i<span class="number">-1</span>][j<span class="number">-1</span>];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> f[m][n];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>一种递归实现（参考）</p><p><a href="https://leetcode-cn.com/problems/zheng-ze-biao-da-shi-pi-pei-lcof/solution/zheng-ze-biao-da-shi-pi-pei-by-leetcode-s3jgn/">https://leetcode-cn.com/problems/zheng-ze-biao-da-shi-pi-pei-lcof/solution/zheng-ze-biao-da-shi-pi-pei-by-leetcode-s3jgn/</a></p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">isMatch</span><span class="params">(string s, string p)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (p.<span class="built_in">empty</span>()) <span class="keyword">return</span> s.<span class="built_in">empty</span>();</span><br><span class="line">    <span class="type">bool</span> first_match = !s.<span class="built_in">empty</span>() &amp;&amp; (s[<span class="number">0</span>] == p[<span class="number">0</span>] || p[<span class="number">0</span>] == <span class="string">&#x27;.&#x27;</span>);</span><br><span class="line">    <span class="keyword">if</span> (p.<span class="built_in">size</span>() &gt;= <span class="number">2</span> &amp;&amp; p[<span class="number">1</span>] == <span class="string">&#x27;*&#x27;</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> (first_match &amp;&amp; <span class="built_in">isMatch</span>(s.<span class="built_in">substr</span>(<span class="number">1</span>), p)) || <span class="built_in">isMatch</span>(s, p.<span class="built_in">substr</span>(<span class="number">2</span>));</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> first_match &amp;&amp; <span class="built_in">isMatch</span>(s.<span class="built_in">substr</span>(<span class="number">1</span>), p.<span class="built_in">substr</span>(<span class="number">1</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;figure class=&quot;highlight c++&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>OJ矩阵快速幂</title>
+    <link href="https://levyya.github.io/2022/03/21/OJ%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82/"/>
+    <id>https://levyya.github.io/2022/03/21/OJ%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82/</id>
+    <published>2022-03-21T06:34:57.000Z</published>
+    <updated>2022-05-09T07:06:41.189Z</updated>
+    
+    <content type="html"><![CDATA[<p>参考博客：<a href="https://blog.csdn.net/zhangxiaoduoduo/article/details/81807338">https://blog.csdn.net/zhangxiaoduoduo/article/details/81807338</a></p><h2 id="模版"><a href="#模版" class="headerlink" title="模版"></a>模版</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Mat</span> &#123;</span><br><span class="line">    LL m[<span class="number">101</span>][<span class="number">101</span>];</span><br><span class="line">&#125;;</span><br><span class="line">Mat in, out;</span><br><span class="line"><span class="function">Mat <span class="title">Mul</span><span class="params">(Mat x, Mat y)</span> </span>&#123;</span><br><span class="line">    Mat c;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt;= n; j++) &#123;</span><br><span class="line">            c.m[i][j] = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt;= n; j++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> k = <span class="number">1</span>; k &lt;= n; k++) &#123;</span><br><span class="line">                c.m[i][j] = c.m[i][j] % mod + x.m[i][k] * y.m[k][j] % mod;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> c;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">Mat <span class="title">pow</span><span class="params">(Mat x, LL y)</span> </span>&#123;</span><br><span class="line">Mat c = e;</span><br><span class="line">    <span class="keyword">while</span> (y) &#123;</span><br><span class="line">        <span class="keyword">if</span> (y &amp; <span class="number">1</span>) c = <span class="built_in">Mul</span>(c, x);</span><br><span class="line">        x = <span class="built_in">Mul</span>(x, x);</span><br><span class="line">        y &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> c;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;参考博客：&lt;a href=&quot;https://blog.csdn.net/zhangxiaoduoduo/article/details/81807338&quot;&gt;https://blog.csdn.net/zhangxiaoduoduo/article/details/81807</summary>
+      
+    
+    
+    
+    
+    <category term="algorithm" scheme="https://levyya.github.io/tags/algorithm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>OJ判断是否二叉搜索树</title>
+    <link href="https://levyya.github.io/2022/03/17/OJ%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/"/>
+    <id>https://levyya.github.io/2022/03/17/OJ%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/</id>
+    <published>2022-03-17T06:58:33.000Z</published>
+    <updated>2022-05-09T07:06:41.186Z</updated>
+    
+    <content type="html"><![CDATA[<p> 错误典型代码：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">isValidBST</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!root) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span> (!root-&gt;left &amp;&amp; !root-&gt;right) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span> (!root-&gt;left)  &#123;</span><br><span class="line">            <span class="keyword">return</span> root-&gt;val &lt; root-&gt;right-&gt;val &amp;&amp; <span class="built_in">isValidBST</span>(root-&gt;right);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (!root-&gt;right) &#123;</span><br><span class="line">            <span class="keyword">return</span> root-&gt;val &gt; root-&gt;left-&gt;val &amp;&amp; <span class="built_in">isValidBST</span>(root-&gt;left);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> root-&gt;val &lt; root-&gt;right-&gt;val &amp;&amp; root-&gt;val &gt; root-&gt;left-&gt;val &amp;&amp; <span class="built_in">isValidBST</span>(root-&gt;left) &amp;&amp; <span class="built_in">isValidBST</span>(root-&gt;right);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p>案例：[5,4,6,null,null,3,7]</p><p>正确的递归写法：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">isValidBST</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">helper</span>(root, LONG_MIN, LONG_MAX);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">helper</span><span class="params">(TreeNode* root, <span class="type">long</span> <span class="type">long</span> lower, <span class="type">long</span> <span class="type">long</span> upper)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="literal">nullptr</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span> (root-&gt;val &lt;= lower || root-&gt;val &gt;= upper) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">helper</span>(root-&gt;left, lower, root-&gt;val) &amp;&amp; <span class="built_in">helper</span>(root-&gt;right, root-&gt;val, upper);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt; 错误典型代码：&lt;/p&gt;
+&lt;figure class=&quot;highlight c++&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;</summary>
+      
+    
+    
+    
+    
+    <category term="algorithm" scheme="https://levyya.github.io/tags/algorithm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>OJ卡特兰数</title>
+    <link href="https://levyya.github.io/2022/03/17/OJ%E5%8D%A1%E7%89%B9%E5%85%B0%E6%95%B0/"/>
+    <id>https://levyya.github.io/2022/03/17/OJ%E5%8D%A1%E7%89%B9%E5%85%B0%E6%95%B0/</id>
+    <published>2022-03-17T06:34:17.000Z</published>
+    <updated>2022-05-09T07:06:41.187Z</updated>
+    
+    <content type="html"><![CDATA[<p>1, 2, 5, 14, 42, 132, …</p><p>卡特兰数满足：</p><p>$$G(n)&#x3D;\sum_{i&#x3D;1}^nG(i-1)G(n-i)$$</p><p>递推关系：</p><p>$$h(n)&#x3D;\frac{C_{2n}^n}{n+1}&#x3D;\frac{2(2n-1)}{n+1}h(n-1)$$</p><p>常见问题：</p><ul><li><p>n个节点能构成多少种不同的二叉树</p></li><li><p>一个栈(<a href="https://baike.baidu.com/item/%E6%97%A0%E7%A9%B7%E5%A4%A7">无穷大</a>)的进栈序列为1,2,3,..n,有多少个不同的出栈序列?</p></li><li><p>形如这样的直角三角形网格，从左上角开始，只能向右走和向下走，问总共有多少种走法？</p><p>![image-20220317144019464](&#x2F;Users&#x2F;levy&#x2F;Library&#x2F;Application Support&#x2F;typora-user-images&#x2F;image-20220317144019464.png)</p></li><li><p>矩阵连乘：</p><p><img src="https://bkimg.cdn.bcebos.com/formula/66805a78efb4dd54c1bcae93843bafea.svg" alt="img"></p><p> ，共有（n+1）项，依据<a href="https://baike.baidu.com/item/%E4%B9%98%E6%B3%95%E7%BB%93%E5%90%88%E5%BE%8B">乘法结合律</a>，不改变其顺序，只用括号表示成对的乘积，试问有几种括号化的方案？或者说：有n对括号，可以并列或嵌套排列，共有多少种情况？</p></li><li><p>n个0和n个1组成一个2n位的2进制数，要求从左到右扫描时，1的累计数始终都<strong>小于等于</strong>0的累计数，求满足条件的数有多少？</p></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;1, 2, 5, 14, 42, 132, …&lt;/p&gt;
+&lt;p&gt;卡特兰数满足：&lt;/p&gt;
+&lt;p&gt;$$G(n)&amp;#x3D;\sum_{i&amp;#x3D;1}^nG(i-1)G(n-i)$$&lt;/p&gt;
+&lt;p&gt;递推关系：&lt;/p&gt;
+&lt;p&gt;$$h(n)&amp;#x3D;\frac{C_{2n}^n}</summary>
+      
+    
+    
+    
+    
+    <category term="algorithm" scheme="https://levyya.github.io/tags/algorithm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>OJ记录</title>
+    <link href="https://levyya.github.io/2022/03/16/OJ%E8%AE%B0%E5%BD%95/"/>
+    <id>https://levyya.github.io/2022/03/16/OJ%E8%AE%B0%E5%BD%95/</id>
+    <published>2022-03-16T07:18:54.000Z</published>
+    <updated>2022-05-09T07:06:41.190Z</updated>
+    
+    <content type="html"><![CDATA[<p>03.19</p><ul><li><a href="https://leetcode-cn.com/problems/find-the-duplicate-number/">#287 寻找重复数</a></li><li><a href="https://leetcode-cn.com/problems/search-a-2d-matrix-ii/">#240 搜索二维矩阵 II</a></li><li><a href="https://leetcode-cn.com/problems/search-in-rotated-sorted-array/">#33 搜索旋转排序数组</a></li><li><a href="https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/"> #34 在排序数组中查找元素的第一个和最</a></li><li><a href="https://leetcode-cn.com/problems/binary-tree-inorder-traversal/">#94 二叉树的中序遍历</a></li><li><a href="https://leetcode-cn.com/problems/add-two-numbers/"> #2 两数相加</a></li></ul><p>错题</p><ul><li><a href="https://leetcode-cn.com/problems/cong-shang-dao-xia-da-yin-er-cha-shu-iii-lcof/">#剑指 Offer 32 - III 从上到下打印二叉</a></li></ul><p>未完成</p><ul><li><a href="https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof/">剑指 Offer 33. 二叉搜索树的后序遍历序列</a></li><li><a href="https://leetcode-cn.com/problems/fu-za-lian-biao-de-fu-zhi-lcof/">剑指 Offer 35. 复杂链表的复制</a></li><li><a href="https://leetcode-cn.com/problems/zi-fu-chuan-de-pai-lie-lcof/">剑指 Offer 38. 字符串的排列</a></li><li><a href="https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof/">剑指 Offer 40. 最小的k个数</a></li><li><a href="https://leetcode-cn.com/problems/shu-zi-xu-lie-zhong-mou-yi-wei-de-shu-zi-lcof/">剑指 Offer 44. 数字序列中某一位的数字</a></li><li><a href="https://leetcode-cn.com/problems/ba-shu-zu-pai-cheng-zui-xiao-de-shu-lcof/">剑指 Offer 45. 把数组排成最小的数</a></li><li><a href="https://leetcode-cn.com/problems/bu-yong-jia-jian-cheng-chu-zuo-jia-fa-lcof/">剑指 Offer 65. 不用加减乘除做加法</a></li><li><a href="https://leetcode-cn.com/problems/yuan-quan-zhong-zui-hou-sheng-xia-de-shu-zi-lcof/">剑指 Offer 62. 圆圈中最后剩下的数字</a></li><li><a href="https://leetcode-cn.com/problems/longest-palindromic-substring/">5. 最长回文子串</a></li><li><a href="https://leetcode-cn.com/problems/container-with-most-water/">11. 盛最多水的容器</a></li><li><a href="https://leetcode-cn.com/problems/longest-consecutive-sequence/">128. 最长连续序列</a></li><li><a href="https://leetcode-cn.com/problems/mini-parser/">385. 迷你语法分析器</a></li></ul><p>dp (learning):</p><ul><li><a href="https://leetcode-cn.com/problems/nge-tou-zi-de-dian-shu-lcof/">剑指 Offer 60. n个骰子的点数</a></li><li><a href="https://www.nowcoder.com/practice/f9c6f980eeec43ef85be20755ddbeaf4?tpId=37&amp;rp=1&amp;ru=/exam/oj/ta&amp;qru=/exam/oj/ta&amp;sourceUrl=/exam/oj/ta?tpId=37&amp;difficulty=3&amp;judgeStatus=&amp;tags=&amp;title=&amp;gioEnter=menu">https://www.nowcoder.com/practice/f9c6f980eeec43ef85be20755ddbeaf4?tpId=37&amp;rp=1&amp;ru=%2Fexam%2Foj%2Fta&amp;qru=%2Fexam%2Foj%2Fta&amp;sourceUrl=%2Fexam%2Foj%2Fta%3FtpId%3D37&amp;difficulty=3&amp;judgeStatus=&amp;tags=&amp;title=&amp;gioEnter=menu</a>  (华为HJ 购物单、01背包、条件限制)</li><li><a href="https://leetcode-cn.com/problems/last-stone-weight-ii/">1049. 最后一块石头的重量 II</a></li></ul><h4 id="136-只出现一次的数字"><a href="#136-只出现一次的数字" class="headerlink" title="136. 只出现一次的数字"></a><a href="https://leetcode-cn.com/problems/single-number/">136. 只出现一次的数字</a></h4><p>题意：给定一个<strong>非空</strong>整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。</p><p>思路：异或运算</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;03.19&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/find-the-duplicate-number/&quot;&gt;#287 寻找重复数&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://leetcod</summary>
+      
+    
+    
+    
+    
+    <category term="record" scheme="https://levyya.github.io/tags/record/"/>
+    
+  </entry>
+  
+</feed>
