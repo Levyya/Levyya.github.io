@@ -2,7 +2,9 @@
 title: Deep Position-wise Interaction Network for CTR Prediction
 date: 2022-04-26 21:21:39
 tags: 论文
-categories: 计算机
+categories: 
+- 计算机
+- 搜索
 ---
 
 [论文地址](https://arxiv.org/pdf/2106.05482v2.pdf)

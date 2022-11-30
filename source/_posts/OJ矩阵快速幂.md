@@ -2,6 +2,9 @@
 title: OJ矩阵快速幂
 date: 2022-03-21 14:34:57
 tags: algorithm
+categories:
+- 计算机
+- OJ
 ---
 
 参考博客：https://blog.csdn.net/zhangxiaoduoduo/article/details/81807338

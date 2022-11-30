@@ -2,6 +2,9 @@
 title: OJ判断是否二叉搜索树
 date: 2022-03-17 14:58:33
 tags: algorithm
+categories:
+- 计算机
+- OJ
 ---
 
  错误典型代码：

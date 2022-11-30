@@ -3,10 +3,10 @@
 # --------------------------------------
 
 menu:
-  Home: / || fas fa-home
-  Archives: /archives/ || fas fa-archive
-  Tags: /tags/ || fas fa-tags
-  Categories: /categories/ || fas fa-folder-open
+  首页: / || fas fa-home
+  归档: /archives/ || fas fa-archive
+  标签: /tags/ || fas fa-tags
+  分类: /categories/ || fas fa-folder-open
   # List||fas fa-list:
   #   Music: /music/ || fas fa-music
   #   Movie: /movies/ || fas fa-video
@@ -636,7 +636,7 @@ aside:
   card_announcement:
     enable: true
     content: 
-      - 正经人谁写博客(qq:1091697485@qq.com)
+      - 准备 Java 面试中
   card_recent_post:
     enable: true
     limit: 5 # if set 0 will show all

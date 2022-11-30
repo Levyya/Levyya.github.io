@@ -133,6 +133,7 @@ jsonContent:
     tags: true
 
 live2d:
+  enable: false
   model:
     scale: 1
     hHeadPos: 0.5

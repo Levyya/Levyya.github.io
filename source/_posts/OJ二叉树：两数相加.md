@@ -2,7 +2,9 @@
 title: OJ二叉树：两数相加
 date: 2022-03-16 10:57:36
 tags: algorithm
-
+categories:
+- 计算机
+- OJ
 ---
 
 * 注意最后一位数是否有进位

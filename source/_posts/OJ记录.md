@@ -1,10 +1,23 @@
 ---
 title: OJ记录
 date: 2022-03-16 15:18:54
-tags: record
+tags: 
+- record
+- OJ
 ---
 
-03.19
+
+
+算法：
+* 模拟、枚举、 排序、贪心、双指针、分治、哈希、高精度、DFS、BFS、二分、动态规划、位运算、记忆化搜索、递归、前缀和、差分、拓扑排序、快速幂
+数据结构：
+* 数组、链表、栈、队列、堆、树、图、字符串、并查集、单调栈
+数学：
+* 基础数学、数论、计算几何、位运算、博弈、概率论、组合数学、线性代数
+
+
+
+## 03.19
 
 * [#287 寻找重复数](https://leetcode-cn.com/problems/find-the-duplicate-number/)
 * [#240 搜索二维矩阵 II](https://leetcode-cn.com/problems/search-a-2d-matrix-ii/)
@@ -44,8 +57,18 @@ dp (learning):
 
 
 
-#### [136. 只出现一次的数字](https://leetcode-cn.com/problems/single-number/)
+[136. 只出现一次的数字](https://leetcode-cn.com/problems/single-number/)
 
 题意：给定一个**非空**整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。
 
 思路：异或运算
+
+
+
+## 1013
+
+- [x] #### [剑指 Offer 04. 二维数组中的查找](https://leetcode.cn/problems/er-wei-shu-zu-zhong-de-cha-zhao-lcof/)
+
+- [x] #### [剑指 Offer 07. 重建二叉树](https://leetcode.cn/problems/zhong-jian-er-cha-shu-lcof/)
+
+  - [ ] review

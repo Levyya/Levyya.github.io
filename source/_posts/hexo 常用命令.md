@@ -1,8 +1,11 @@
 ---
-title: Hello World
+title: Hexo 常用命令
+tags: 
+- 博客
+- Blog
+categories: 
+- 博客
 ---
-Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
-
 ## Quick Start
 
 ### Create a new post
@@ -17,6 +20,7 @@ More info: [Writing](https://hexo.io/docs/writing.html)
 
 ``` bash
 $ hexo server
+$ hexo s
 ```
 
 More info: [Server](https://hexo.io/docs/server.html)
@@ -25,6 +29,7 @@ More info: [Server](https://hexo.io/docs/server.html)
 
 ``` bash
 $ hexo generate
+$ hexo g
 ```
 
 More info: [Generating](https://hexo.io/docs/generating.html)
@@ -33,6 +38,7 @@ More info: [Generating](https://hexo.io/docs/generating.html)
 
 ``` bash
 $ hexo deploy
+$ hexo d
 ```
 
 More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)

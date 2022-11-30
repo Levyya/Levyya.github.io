@@ -2,6 +2,9 @@
 title: OJ丑数
 date: 2022-03-29 11:10:02
 tags: algorithm
+categories:
+- 计算机
+- OJ
 ---
 
 * 最小堆

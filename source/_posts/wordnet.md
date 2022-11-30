@@ -2,6 +2,9 @@
 title: wordnet
 date: 2022-04-12 15:09:53
 tags: NLP
+categories: 
+- 计算机
+- NLP
 ---
 
 ## wordnet介绍
