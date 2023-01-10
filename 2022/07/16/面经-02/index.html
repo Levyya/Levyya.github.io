@@ -1,0 +1,363 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>面经-02 | Levy's blog</title><meta name="keywords" content="面经"><meta name="author" content="Levy"><meta name="copyright" content="Levy"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="测试java面试题200道 学习网站 Java 八股文 Java Guide 小林coding  知识点（待学习） AQS mysql (索引) Swagger UnitTest  spring以下内容来源：github.JavaGuide https:&#x2F;&#x2F;github.com&#x2F;Snailclimb&#x2F;JavaGuide&#x2F;blob&#x2F;main&#x2F;docs&#x2F;system-design&#x2F;framework&#x2F;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面经-02">
+<meta property="og:url" content="https://levyya.github.io/2022/07/16/%E9%9D%A2%E7%BB%8F-02/index.html">
+<meta property="og:site_name" content="Levy&#39;s blog">
+<meta property="og:description" content="测试java面试题200道 学习网站 Java 八股文 Java Guide 小林coding  知识点（待学习） AQS mysql (索引) Swagger UnitTest  spring以下内容来源：github.JavaGuide https:&#x2F;&#x2F;github.com&#x2F;Snailclimb&#x2F;JavaGuide&#x2F;blob&#x2F;main&#x2F;docs&#x2F;system-design&#x2F;framework&#x2F;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg">
+<meta property="article:published_time" content="2022-07-16T13:04:16.000Z">
+<meta property="article:modified_time" content="2023-01-10T12:35:16.667Z">
+<meta property="article:author" content="Levy">
+<meta property="article:tag" content="面经">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://levyya.github.io/2022/07/16/%E9%9D%A2%E7%BB%8F-02/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '面经-02',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-01-10 20:35:16'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/background_color.css"><meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="Levy's blog" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/%E9%98%BF%E5%B0%BC%E4%BA%9A.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">65</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">36</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Levy's blog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">面经-02</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-07-16T13:04:16.000Z" title="发表于 2022-07-16 21:04:16">2022-07-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-01-10T12:35:16.667Z" title="更新于 2023-01-10 20:35:16">2023-01-10</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="面经-02"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p><a target="_blank" rel="noopener" href="https://www.nowcoder.com/discuss/965198">java面试题200道</a></p>
+<h2 id="学习网站"><a href="#学习网站" class="headerlink" title="学习网站"></a>学习网站</h2><ul>
+<li><a target="_blank" rel="noopener" href="http://coderleixiaoshuai.gitee.io/java-eight-part/#/?id=java%e5%85%a5%e9%97%a8%e9%9d%a2%e8%af%95%e9%a2%98">Java 八股文</a></li>
+<li><a target="_blank" rel="noopener" href="https://snailclimb.gitee.io/javaguide/#/">Java Guide</a></li>
+<li><a target="_blank" rel="noopener" href="https://xiaolincoding.com/mysql/index/index_interview.html#%E6%8C%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%88%86%E7%B1%BB">小林coding</a></li>
+</ul>
+<h2 id="知识点（待学习）"><a href="#知识点（待学习）" class="headerlink" title="知识点（待学习）"></a>知识点（待学习）</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_40757920/article/details/105401146">AQS</a></li>
+<li><a target="_blank" rel="noopener" href="https://xiaolincoding.com/mysql/log/how_update.html#%E4%B8%A4%E9%98%B6%E6%AE%B5%E6%8F%90%E4%BA%A4%E7%9A%84%E8%BF%87%E7%A8%8B%E6%98%AF%E6%80%8E%E6%A0%B7%E7%9A%84">mysql (索引)</a></li>
+<li>Swagger</li>
+<li>UnitTest</li>
+</ul>
+<h3 id="spring"><a href="#spring" class="headerlink" title="spring"></a>spring</h3><p>以下内容来源：github.JavaGuide</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/Snailclimb/JavaGuide/blob/main/docs/system-design/framework/spring/spring-knowledge-and-questions-summary.md">https://github.com/Snailclimb/JavaGuide/blob/main/docs/system-design/framework/spring/spring-knowledge-and-questions-summary.md</a></p>
+<h4 id="谈谈自己对于-Spring-IoC-的了解"><a href="#谈谈自己对于-Spring-IoC-的了解" class="headerlink" title="谈谈自己对于 Spring IoC 的了解"></a><strong>谈谈自己对于 Spring IoC 的了解</strong></h4><p><strong>IoC（Inverse of Control:控制反转）</strong> 是一种设计思想，而不是一个具体的技术实现。IoC 的思想就是将原本在程序中手动创建对象的控制权，交由 Spring 框架来管理。</p>
+<h4 id="谈谈自己对于-AOP-的了解"><a href="#谈谈自己对于-AOP-的了解" class="headerlink" title="谈谈自己对于 AOP 的了解"></a>谈谈自己对于 AOP 的了解</h4><p>AOP(Aspect-Oriented Programming:面向切面编程)能够将那些与业务无关，却为业务模块所共同调用的逻辑或责任（例如<strong>事务处理、日志管理、权限控制</strong>等）封装起来，便于减少系统的重复代码，降低模块间的耦合度，并有利于未来的可拓展性和可维护性。</p>
+<p>Spring AOP 就是基于动态代理的，如果要代理的对象，实现了某个接口，那么 Spring AOP 会使用 <strong>JDK Proxy</strong>，去创建代理对象，而对于没有实现接口的对象，就无法使用 JDK Proxy 去进行代理了，这时候 Spring AOP 会使用 <strong>Cglib</strong> 生成一个被代理对象的子类来作为代理。</p>
+<h4 id="Spring-AOP-和-AspectJ-AOP-有什么区别？"><a href="#Spring-AOP-和-AspectJ-AOP-有什么区别？" class="headerlink" title="Spring AOP 和 AspectJ AOP 有什么区别？"></a>Spring AOP 和 AspectJ AOP 有什么区别？</h4><p><strong>Spring AOP 属于运行时增强，而 AspectJ 是编译时增强。</strong> Spring AOP 基于代理(Proxying)，而 AspectJ 基于字节码操作(Bytecode Manipulation)。</p>
+<p>AspectJ 相比于 Spring AOP 功能更加强大，但是 Spring AOP 相对来说更简单，</p>
+<p>如果我们的切面比较少，那么两者性能差异不大。但是，当切面太多的话，最好选择 AspectJ ，它比 Spring AOP 快很多。</p>
+<h4 id="Spring-Bean"><a href="#Spring-Bean" class="headerlink" title="Spring Bean"></a>Spring Bean</h4><p>Bean 代指的就是那些<strong>被 IoC 容器所管理的对象。</strong></p>
+<h4 id="将一个类声明为-Bean-的注解有哪些"><a href="#将一个类声明为-Bean-的注解有哪些" class="headerlink" title="将一个类声明为 Bean 的注解有哪些?"></a>将一个类声明为 Bean 的注解有哪些?</h4><ul>
+<li><code>@Component</code> ：通用的注解，可标注任意类为 <code>Spring</code> 组件。如果一个 Bean 不知道属于哪个层，可以使用<code>@Component</code> 注解标注。</li>
+<li><code>@Repository</code> : 对应持久层即 Dao 层，主要用于数据库相关操作。</li>
+<li><code>@Service</code> : 对应服务层，主要涉及一些复杂的逻辑，需要用到 Dao 层。</li>
+<li><code>@Controller</code> : 对应 Spring MVC 控制层，主要用户接受用户请求并调用 Service 层返回数据给前端页面。</li>
+</ul>
+<h4 id="Component-和-Bean-的区别是什么？"><a href="#Component-和-Bean-的区别是什么？" class="headerlink" title="@Component 和 @Bean 的区别是什么？"></a>@Component 和 @Bean 的区别是什么？</h4><ul>
+<li><code>@Component</code> 注解作用于类，而<code>@Bean</code>注解作用于方法。</li>
+<li><code>@Component</code>通常是通过类路径扫描来自动侦测以及自动装配到 Spring 容器中（我们可以使用 <code>@ComponentScan</code> 注解定义要扫描的路径从中找出标识了需要装配的类自动装配到 Spring 的 bean 容器中）。<code>@Bean</code> 注解通常是我们在标有该注解的方法中定义产生这个 bean,<code>@Bean</code>告诉了 Spring 这是某个类的实例，当我需要用它的时候还给我。</li>
+<li><code>@Bean</code> 注解比 <code>@Component</code> 注解的自定义性更强，而且很多地方我们只能通过 <code>@Bean</code> 注解来注册 bean。比如当我们引用第三方库中的类需要装配到 <code>Spring</code>容器时，则只能通过 <code>@Bean</code>来实现。</li>
+</ul>
+<h4 id="注入-Bean-的注解有哪些？"><a href="#注入-Bean-的注解有哪些？" class="headerlink" title="注入 Bean 的注解有哪些？"></a>注入 Bean 的注解有哪些？</h4><p>Spring 内置的 <code>@Autowired</code> 以及 JDK 内置的 <code>@Resource</code> 和 <code>@Inject</code> 都可以用于注入 Bean。</p>
+<table>
+<thead>
+<tr>
+<th>Annotaion</th>
+<th>Package</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>@Autowired</code></td>
+<td><code>org.springframework.bean.factory</code></td>
+<td>Spring 2.5+</td>
+</tr>
+<tr>
+<td><code>@Resource</code></td>
+<td><code>javax.annotation</code></td>
+<td>Java JSR-250</td>
+</tr>
+<tr>
+<td><code>@Inject</code></td>
+<td><code>javax.inject</code></td>
+<td>Java JSR-330</td>
+</tr>
+</tbody></table>
+<h4 id="Autowired-和-Resource-的区别是什么？"><a href="#Autowired-和-Resource-的区别是什么？" class="headerlink" title="@Autowired 和 @Resource 的区别是什么？"></a>@Autowired 和 @Resource 的区别是什么？</h4><ul>
+<li><code>@Autowired</code> 是 Spring 提供的注解，<code>@Resource</code> 是 JDK 提供的注解。</li>
+<li><code>Autowired</code> 默认的注入方式为<code>byType</code>（根据类型进行匹配），<code>@Resource</code>默认注入方式为 <code>byName</code>（根据名称进行匹配）。</li>
+<li>当一个接口存在多个实现类的情况下，<code>@Autowired</code> 和<code>@Resource</code>都需要通过名称才能正确匹配到对应的 Bean。<code>Autowired</code> 可以通过 <code>@Qualifier</code> 注解来显示指定名称，<code>@Resource</code>可以通过 <code>name</code> 属性来显示指定名称。</li>
+</ul>
+<h4 id="Bean-的作用域有哪些"><a href="#Bean-的作用域有哪些" class="headerlink" title="Bean 的作用域有哪些?"></a>Bean 的作用域有哪些?</h4><ul>
+<li><strong>singleton</strong> : 唯一 bean 实例，Spring 中的 bean 默认都是单例的，对单例设计模式的应用。</li>
+<li><strong>prototype</strong> : 每次请求都会创建一个新的 bean 实例。</li>
+<li><strong>request</strong> : 每一次 HTTP 请求都会产生一个新的 bean，该 bean 仅在当前 HTTP request 内有效。</li>
+<li><strong>session</strong> : 每一次来自新 session 的 HTTP 请求都会产生一个新的 bean，该 bean 仅在当前 HTTP session 内有效。</li>
+<li><strong>global-session</strong> ： 全局 session 作用域，仅仅在基于 portlet 的 web 应用中才有意义，Spring5 已经没有了。Portlet 是能够生成语义代码(例如：HTML)片段的小型 Java Web 插件。它们基于 portlet 容器，可以像 servlet 一样处理 HTTP 请求。但是，与 servlet 不同，每个 portlet 都有不同的会话。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="meta">@Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE)</span></span><br><span class="line"><span class="keyword">public</span> Person <span class="title function_">personPrototype</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Person</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="单例-Bean-的线程安全问题了解吗？"><a href="#单例-Bean-的线程安全问题了解吗？" class="headerlink" title="单例 Bean 的线程安全问题了解吗？"></a>单例 Bean 的线程安全问题了解吗？</h4><p>常见的有两种解决办法：</p>
+<ol>
+<li>在 Bean 中尽量避免定义可变的成员变量。</li>
+<li>在类中定义一个 <code>ThreadLocal</code> 成员变量，将需要的可变成员变量保存在 <code>ThreadLocal</code> 中（推荐的一种方式）。</li>
+</ol>
+<p>不过，大部分 Bean 实际都是无状态（没有实例变量）的（比如 Dao、Service），这种情况下， Bean 是线程安全的。</p>
+<h4 id="Bean-的生命周期了解么"><a href="#Bean-的生命周期了解么" class="headerlink" title="Bean 的生命周期了解么?"></a>Bean 的生命周期了解么?</h4><p>实例化，配置属性，Aware接口方法，BeanPostProcessor，InitializingBean接口，DisposableBean接口，destory-method</p>
+<ul>
+<li>Bean 容器找到配置文件中 Spring Bean 的定义。</li>
+<li>Bean 容器利用 Java Reflection API 创建一个 Bean 的实例。</li>
+<li>如果涉及到一些属性值 利用 <code>set()</code>方法设置一些属性值。</li>
+<li>如果 Bean 实现了 <code>BeanNameAware</code> 接口，调用 <code>setBeanName()</code>方法，传入 Bean 的名字。</li>
+<li>如果 Bean 实现了 <code>BeanClassLoaderAware</code> 接口，调用 <code>setBeanClassLoader()</code>方法，传入 <code>ClassLoader</code>对象的实例。</li>
+<li>如果 Bean 实现了 <code>BeanFactoryAware</code> 接口，调用 <code>setBeanFactory()</code>方法，传入 <code>BeanFactory</code>对象的实例。</li>
+<li>与上面的类似，如果实现了其他 <code>*.Aware</code>接口，就调用相应的方法。</li>
+<li>如果有和加载这个 Bean 的 Spring 容器相关的 <code>BeanPostProcessor</code> 对象，执行<code>postProcessBeforeInitialization()</code> 方法</li>
+<li>如果 Bean 实现了<code>InitializingBean</code>接口，执行<code>afterPropertiesSet()</code>方法。</li>
+<li>如果 Bean 在配置文件中的定义包含 init-method 属性，执行指定的方法。</li>
+<li>如果有和加载这个 Bean 的 Spring 容器相关的 <code>BeanPostProcessor</code> 对象，执行<code>postProcessAfterInitialization()</code> 方法</li>
+<li>当要销毁 Bean 的时候，如果 Bean 实现了 <code>DisposableBean</code> 接口，执行 <code>destroy()</code> 方法。</li>
+<li>当要销毁 Bean 的时候，如果 Bean 在配置文件中的定义包含 destroy-method 属性，执行指定的方法。</li>
+</ul>
+<h3 id="Spring-MVC"><a href="#Spring-MVC" class="headerlink" title="Spring MVC"></a>Spring MVC</h3><p>MVC 是模型(Model)、视图(View)、控制器(Controller)的简写，其核心思想是通过将业务逻辑、数据、显示分离来组织代码。</p>
+<p>Spring MVC 下我们一般把后端项目分为 Service 层（处理业务）、Dao 层（数据库操作）、Entity 层（实体类）、Controller 层(控制层，返回数据给前台页面)。</p>
+<h4 id="SpringMVC-工作原理了解吗"><a href="#SpringMVC-工作原理了解吗" class="headerlink" title="SpringMVC 工作原理了解吗?"></a>SpringMVC 工作原理了解吗?</h4><ol>
+<li>客户端（浏览器）发送请求，直接请求到 <code>DispatcherServlet</code>。</li>
+<li><code>DispatcherServlet</code> 根据请求信息调用 <code>HandlerMapping</code>，解析请求对应的 <code>Handler</code>。</li>
+<li>解析到对应的 <code>Handler</code>（也就是我们平常说的 <code>Controller</code> 控制器）后，开始由 <code>HandlerAdapter</code> 适配器处理。</li>
+<li><code>HandlerAdapter</code> 会根据 <code>Handler</code>来调用真正的处理器开处理请求，并处理相应的业务逻辑。</li>
+<li>处理器处理完业务后，会返回一个 <code>ModelAndView</code> 对象，<code>Model</code> 是返回的数据对象，<code>View</code> 是个逻辑上的 <code>View</code>。</li>
+<li><code>ViewResolver</code> 会根据逻辑 <code>View</code> 查找实际的 <code>View</code>。</li>
+<li><code>DispaterServlet</code> 把返回的 <code>Model</code> 传给 <code>View</code>（视图渲染）。</li>
+<li>把 <code>View</code> 返回给请求者（浏览器）</li>
+</ol>
+<h4 id="Spring-框架中用到了哪些设计模式？"><a href="#Spring-框架中用到了哪些设计模式？" class="headerlink" title="Spring 框架中用到了哪些设计模式？"></a>Spring 框架中用到了哪些设计模式？</h4><ul>
+<li><strong>工厂设计模式</strong> : Spring 使用工厂模式通过 <code>BeanFactory</code>、<code>ApplicationContext</code> 创建 bean 对象。</li>
+<li><strong>代理设计模式</strong> : Spring AOP 功能的实现。</li>
+<li><strong>单例设计模式</strong> : Spring 中的 Bean 默认都是单例的。</li>
+<li><strong>模板方法模式</strong> : Spring 中 <code>jdbcTemplate</code>、<code>hibernateTemplate</code> 等以 Template 结尾的对数据库操作的类，它们就使用到了模板模式。</li>
+<li><strong>包装器设计模式</strong> : 我们的项目需要连接多个数据库，而且不同的客户在每次访问中根据需要会去访问不同的数据库。这种模式让我们可以根据客户的需求能够动态切换不同的数据源。</li>
+<li><strong>观察者模式:</strong> Spring 事件驱动模型就是观察者模式很经典的一个应用。</li>
+<li><strong>适配器模式</strong> : Spring AOP 的增强或通知(Advice)使用到了适配器模式、spring MVC 中也是用到了适配器模式适配<code>Controller</code>。</li>
+</ul>
+<h4 id="Spring-事务"><a href="#Spring-事务" class="headerlink" title="Spring 事务"></a>Spring 事务</h4><h4 id="Spring-管理事务的方式有几种？"><a href="#Spring-管理事务的方式有几种？" class="headerlink" title="Spring 管理事务的方式有几种？"></a>Spring 管理事务的方式有几种？</h4><ul>
+<li><strong>编程式事务</strong> ： 在代码中硬编码(不推荐使用) : 通过 <code>TransactionTemplate</code>或者 <code>TransactionManager</code> 手动管理事务，实际应用中很少使用，但是对于你理解 Spring 事务管理原理有帮助。</li>
+<li><strong>声明式事务</strong> ： 在 XML 配置文件中配置或者直接基于注解（推荐使用） : 实际是通过 AOP 实现（基于<code>@Transactional</code> 的全注解方式使用最多）</li>
+</ul>
+<h4 id="Spring-事务中哪几种事务传播行为"><a href="#Spring-事务中哪几种事务传播行为" class="headerlink" title="Spring 事务中哪几种事务传播行为?"></a>Spring 事务中哪几种事务传播行为?</h4><ul>
+<li>required</li>
+<li>required_new</li>
+<li>nested</li>
+<li>mandatory</li>
+</ul>
+<p>事务传播行为是为了解决业务层方法之间互相调用的事务问题。</p>
+<p>当事务方法被另一个事务方法调用时，必须指定事务应该如何传播。例如：方法可能继续在现有事务中运行，也可能开启一个新事务，并在自己的事务中运行。</p>
+<p>正确的事务传播行为可能的值如下:</p>
+<p><strong>1.<code>TransactionDefinition.PROPAGATION_REQUIRED</code></strong></p>
+<p>使用的最多的一个事务传播行为，我们平时经常使用的<code>@Transactional</code>注解默认使用就是这个事务传播行为。<strong>如果当前存在事务，则加入该事务；如果当前没有事务，则创建一个新的事务。</strong></p>
+<p><strong><code>2.TransactionDefinition.PROPAGATION_REQUIRES_NEW</code></strong></p>
+<p><strong>创建一个新的事务，如果当前存在事务，则把当前事务挂起。</strong>也就是说不管外部方法是否开启事务，<code>Propagation.REQUIRES_NEW</code>修饰的内部方法会新开启自己的事务，且开启的事务相互独立，互不干扰。</p>
+<p><strong>3.<code>TransactionDefinition.PROPAGATION_NESTED</code></strong></p>
+<p>如果当前存在事务，则创建一个事务作为当前事务的嵌套事务来运行；如果当前没有事务，则该取值等价于<code>TransactionDefinition.PROPAGATION_REQUIRED</code>。</p>
+<p><strong>4.<code>TransactionDefinition.PROPAGATION_MANDATORY</code></strong></p>
+<p>如果当前存在事务，则加入该事务；如果当前没有事务，则抛出异常。（mandatory：强制性）</p>
+<p>这个使用的很少。</p>
+<h4 id="Spring-事务中的隔离级别有哪几种"><a href="#Spring-事务中的隔离级别有哪几种" class="headerlink" title="Spring 事务中的隔离级别有哪几种?"></a>Spring 事务中的隔离级别有哪几种?</h4><ul>
+<li><strong><code>TransactionDefinition.ISOLATION_DEFAULT</code></strong> :使用后端数据库默认的隔离级别，MySQL 默认采用的 <code>REPEATABLE_READ</code> 隔离级别 Oracle 默认采用的 <code>READ_COMMITTED</code> 隔离级别.</li>
+<li><strong><code>TransactionDefinition.ISOLATION_READ_UNCOMMITTED</code></strong> :最低的隔离级别，使用这个隔离级别很少，因为它允许读取尚未提交的数据变更，<strong>可能会导致脏读、幻读或不可重复读</strong></li>
+<li><strong><code>TransactionDefinition.ISOLATION_READ_COMMITTED</code></strong> : 允许读取并发事务已经提交的数据，<strong>可以阻止脏读，但是幻读或不可重复读仍有可能发生</strong></li>
+<li><strong><code>TransactionDefinition.ISOLATION_REPEATABLE_READ</code></strong> : 对同一字段的多次读取结果都是一致的，除非数据是被本身事务自己所修改，<strong>可以阻止脏读和不可重复读，但幻读仍有可能发生。</strong></li>
+<li><strong><code>TransactionDefinition.ISOLATION_SERIALIZABLE</code></strong> : 最高的隔离级别，完全服从 ACID 的隔离级别。所有的事务依次逐个执行，这样事务之间就完全不可能产生干扰，也就是说，<strong>该级别可以防止脏读、不可重复读以及幻读</strong>。但是这将严重影响程序的性能。通常情况下也不会用到该级别。</li>
+</ul>
+<h2 id="每日知识点"><a href="#每日知识点" class="headerlink" title="每日知识点"></a>每日知识点</h2><h3 id="线程池原理"><a href="#线程池原理" class="headerlink" title="线程池原理"></a>线程池原理</h3><h4 id="线程池的几个核心参数"><a href="#线程池的几个核心参数" class="headerlink" title="线程池的几个核心参数"></a>线程池的几个核心参数</h4><ol>
+<li>最大线程数</li>
+<li>核心线程数</li>
+<li>活跃时间</li>
+<li>阻塞队列</li>
+<li>拒绝策略</li>
+</ol>
+<h4 id="提交新任务到线程池，具体执行流程"><a href="#提交新任务到线程池，具体执行流程" class="headerlink" title="提交新任务到线程池，具体执行流程"></a>提交新任务到线程池，具体执行流程</h4><ol>
+<li>当我们提交任务，线程池会根据corePoolSize大小创建若干任务数量线程执行任务</li>
+<li>当任务的数量超过corePoolSize数量，后续的任务将会进入阻塞队列阻塞排队</li>
+<li>当阻塞队列也满了之后，那么将会继续创建(maximumPoolSize-corePoolSize)个数量的线程来执行任务，如果任务处理完成，maximumPoolSize-corePoolSize额外创建的线程等待keepAliveTime之后被自动销毁</li>
+<li>如果达到maximumPoolSize，阻塞队列还是满的状态，那么将根据不同的拒绝策略对应处理</li>
+</ol>
+<h4 id="拒绝策略有哪些"><a href="#拒绝策略有哪些" class="headerlink" title="拒绝策略有哪些"></a>拒绝策略有哪些</h4><ol>
+<li>AbortPolicy：直接丢弃任务，抛出异常，这是默认策略</li>
+<li>CallerRunsPolicy：只用调用者所在的线程来处理任务</li>
+<li>DiscardOldestPolicy：丢弃等待队列中最旧的任务，并执行当前任务</li>
+<li>DiscardPolicy：直接丢弃任务，也不抛出异常</li>
+</ol>
+<h3 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h3><h4 id="数据库三范式"><a href="#数据库三范式" class="headerlink" title="数据库三范式"></a>数据库三范式</h4><p><strong>总结</strong></p>
+<ul>
+<li>1NF：属性不可再分。</li>
+<li>2NF：1NF 的基础之上，消除了非主属性对于码的部分函数依赖。</li>
+<li>3NF：3NF 在 2NF 的基础之上，消除了非主属性对于码的传递函数依赖 。</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Levy</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://levyya.github.io/2022/07/16/%E9%9D%A2%E7%BB%8F-02/">https://levyya.github.io/2022/07/16/%E9%9D%A2%E7%BB%8F-02/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://levyya.github.io" target="_blank">Levy's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E9%9D%A2%E7%BB%8F/">面经</a></div><div class="post_share"><div class="social-share" data-image="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/07/16/%E7%94%B3%E8%AE%BA%E4%BD%9C%E6%96%87/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">申论作文</div></div></a></div><div class="next-post pull-right"><a href="/2022/07/15/LeetCode-02/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">LeetCode-02</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/08/13/%E8%94%9A%E6%9D%A5%E9%9D%A2%E7%BB%8F/" title="蔚来面经"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-13</div><div class="title">蔚来面经</div></div></a></div><div><a href="/2022/07/14/%E9%9D%A2%E7%BB%8F-01/" title="面经-01"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-14</div><div class="title">面经-01</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/%E9%98%BF%E5%B0%BC%E4%BA%9A.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Levy</div><div class="author-info__description"></div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">65</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">36</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Levyya"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">准备毕业中......</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95"><span class="toc-number">1.</span> <span class="toc-text">测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%AB%99"><span class="toc-number">2.</span> <span class="toc-text">学习网站</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%EF%BC%88%E5%BE%85%E5%AD%A6%E4%B9%A0%EF%BC%89"><span class="toc-number">3.</span> <span class="toc-text">知识点（待学习）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#spring"><span class="toc-number">3.1.</span> <span class="toc-text">spring</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B0%88%E8%B0%88%E8%87%AA%E5%B7%B1%E5%AF%B9%E4%BA%8E-Spring-IoC-%E7%9A%84%E4%BA%86%E8%A7%A3"><span class="toc-number">3.1.1.</span> <span class="toc-text">谈谈自己对于 Spring IoC 的了解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B0%88%E8%B0%88%E8%87%AA%E5%B7%B1%E5%AF%B9%E4%BA%8E-AOP-%E7%9A%84%E4%BA%86%E8%A7%A3"><span class="toc-number">3.1.2.</span> <span class="toc-text">谈谈自己对于 AOP 的了解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Spring-AOP-%E5%92%8C-AspectJ-AOP-%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">3.1.3.</span> <span class="toc-text">Spring AOP 和 AspectJ AOP 有什么区别？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Spring-Bean"><span class="toc-number">3.1.4.</span> <span class="toc-text">Spring Bean</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%86%E4%B8%80%E4%B8%AA%E7%B1%BB%E5%A3%B0%E6%98%8E%E4%B8%BA-Bean-%E7%9A%84%E6%B3%A8%E8%A7%A3%E6%9C%89%E5%93%AA%E4%BA%9B"><span class="toc-number">3.1.5.</span> <span class="toc-text">将一个类声明为 Bean 的注解有哪些?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Component-%E5%92%8C-Bean-%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">3.1.6.</span> <span class="toc-text">@Component 和 @Bean 的区别是什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%A8%E5%85%A5-Bean-%E7%9A%84%E6%B3%A8%E8%A7%A3%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="toc-number">3.1.7.</span> <span class="toc-text">注入 Bean 的注解有哪些？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Autowired-%E5%92%8C-Resource-%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">3.1.8.</span> <span class="toc-text">@Autowired 和 @Resource 的区别是什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Bean-%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%9C%89%E5%93%AA%E4%BA%9B"><span class="toc-number">3.1.9.</span> <span class="toc-text">Bean 的作用域有哪些?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%95%E4%BE%8B-Bean-%E7%9A%84%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98%E4%BA%86%E8%A7%A3%E5%90%97%EF%BC%9F"><span class="toc-number">3.1.10.</span> <span class="toc-text">单例 Bean 的线程安全问题了解吗？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Bean-%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E4%BA%86%E8%A7%A3%E4%B9%88"><span class="toc-number">3.1.11.</span> <span class="toc-text">Bean 的生命周期了解么?</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring-MVC"><span class="toc-number">3.2.</span> <span class="toc-text">Spring MVC</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#SpringMVC-%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E4%BA%86%E8%A7%A3%E5%90%97"><span class="toc-number">3.2.1.</span> <span class="toc-text">SpringMVC 工作原理了解吗?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Spring-%E6%A1%86%E6%9E%B6%E4%B8%AD%E7%94%A8%E5%88%B0%E4%BA%86%E5%93%AA%E4%BA%9B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%9F"><span class="toc-number">3.2.2.</span> <span class="toc-text">Spring 框架中用到了哪些设计模式？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Spring-%E4%BA%8B%E5%8A%A1"><span class="toc-number">3.2.3.</span> <span class="toc-text">Spring 事务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Spring-%E7%AE%A1%E7%90%86%E4%BA%8B%E5%8A%A1%E7%9A%84%E6%96%B9%E5%BC%8F%E6%9C%89%E5%87%A0%E7%A7%8D%EF%BC%9F"><span class="toc-number">3.2.4.</span> <span class="toc-text">Spring 管理事务的方式有几种？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Spring-%E4%BA%8B%E5%8A%A1%E4%B8%AD%E5%93%AA%E5%87%A0%E7%A7%8D%E4%BA%8B%E5%8A%A1%E4%BC%A0%E6%92%AD%E8%A1%8C%E4%B8%BA"><span class="toc-number">3.2.5.</span> <span class="toc-text">Spring 事务中哪几种事务传播行为?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Spring-%E4%BA%8B%E5%8A%A1%E4%B8%AD%E7%9A%84%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB%E6%9C%89%E5%93%AA%E5%87%A0%E7%A7%8D"><span class="toc-number">3.2.6.</span> <span class="toc-text">Spring 事务中的隔离级别有哪几种?</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AF%8F%E6%97%A5%E7%9F%A5%E8%AF%86%E7%82%B9"><span class="toc-number">4.</span> <span class="toc-text">每日知识点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%8E%9F%E7%90%86"><span class="toc-number">4.1.</span> <span class="toc-text">线程池原理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E6%B1%A0%E7%9A%84%E5%87%A0%E4%B8%AA%E6%A0%B8%E5%BF%83%E5%8F%82%E6%95%B0"><span class="toc-number">4.1.1.</span> <span class="toc-text">线程池的几个核心参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%90%E4%BA%A4%E6%96%B0%E4%BB%BB%E5%8A%A1%E5%88%B0%E7%BA%BF%E7%A8%8B%E6%B1%A0%EF%BC%8C%E5%85%B7%E4%BD%93%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B"><span class="toc-number">4.1.2.</span> <span class="toc-text">提交新任务到线程池，具体执行流程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8B%92%E7%BB%9D%E7%AD%96%E7%95%A5%E6%9C%89%E5%93%AA%E4%BA%9B"><span class="toc-number">4.1.3.</span> <span class="toc-text">拒绝策略有哪些</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">4.2.</span> <span class="toc-text">数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%89%E8%8C%83%E5%BC%8F"><span class="toc-number">4.2.1.</span> <span class="toc-text">数据库三范式</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/01/10/hexo%20%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" title="Hexo 常用命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hexo 常用命令"/></a><div class="content"><a class="title" href="/2023/01/10/hexo%20%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" title="Hexo 常用命令">Hexo 常用命令</a><time datetime="2023-01-10T12:35:53.941Z" title="发表于 2023-01-10 20:35:53">2023-01-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/01/09/hexo%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E9%97%AE%E9%A2%98/" title="hexo图片加载问题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="hexo图片加载问题"/></a><div class="content"><a class="title" href="/2023/01/09/hexo%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E9%97%AE%E9%A2%98/" title="hexo图片加载问题">hexo图片加载问题</a><time datetime="2023-01-09T11:50:18.000Z" title="发表于 2023-01-09 19:50:18">2023-01-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/01/09/%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0%E6%B5%8B%E8%AF%95/" title="图片上传测试"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="图片上传测试"/></a><div class="content"><a class="title" href="/2023/01/09/%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0%E6%B5%8B%E8%AF%95/" title="图片上传测试">图片上传测试</a><time datetime="2023-01-09T09:07:45.000Z" title="发表于 2023-01-09 17:07:45">2023-01-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/06/github%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E4%B8%8A%E4%BC%A0/" title="github本地项目上传"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="github本地项目上传"/></a><div class="content"><a class="title" href="/2022/12/06/github%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E4%B8%8A%E4%BC%A0/" title="github本地项目上传">github本地项目上传</a><time datetime="2022-12-06T07:24:42.000Z" title="发表于 2022-12-06 15:24:42">2022-12-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/05/ComplexQNN/" title="ComplexQNN"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ComplexQNN"/></a><div class="content"><a class="title" href="/2022/12/05/ComplexQNN/" title="ComplexQNN">ComplexQNN</a><time datetime="2022-12-05T09:24:03.000Z" title="发表于 2022-12-05 17:24:03">2022-12-05</time></div></div></div></div></div></div></main><footer id="footer" style="background: #ace0f9"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By Levy</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.css"><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script></div><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" data-mobile="false" data-text="好困,富强,公正,法治,❤️国,敬业,明主,友善,自由,平等,文明,和谐" data-fontsize="20px" data-random="true" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

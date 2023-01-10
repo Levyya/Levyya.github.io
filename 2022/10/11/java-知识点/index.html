@@ -1,0 +1,645 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>java 知识点 | Levy's blog</title><meta name="keywords" content="Java"><meta name="author" content="Levy"><meta name="copyright" content="Levy"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="计算机科学领域的任何问题都可以通过增加一个间接的中间层来解决，计算机整个体系从上到下都是按照严格的层次结构设计的  设计模式设计模式原则单例模式 工厂模式 代理模式 装饰者模式 责任链模式 模板模式 策略模式 外观模式 框架SpringIOC 和 AOP 常用的注解 Bean 代指那些被IOC容器所管理的对象 AOP 常用的注解  @Aspect  声明为切面类 @Before  前置通知 @A">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java 知识点">
+<meta property="og:url" content="https://levyya.github.io/2022/10/11/java-%E7%9F%A5%E8%AF%86%E7%82%B9/index.html">
+<meta property="og:site_name" content="Levy&#39;s blog">
+<meta property="og:description" content="计算机科学领域的任何问题都可以通过增加一个间接的中间层来解决，计算机整个体系从上到下都是按照严格的层次结构设计的  设计模式设计模式原则单例模式 工厂模式 代理模式 装饰者模式 责任链模式 模板模式 策略模式 外观模式 框架SpringIOC 和 AOP 常用的注解 Bean 代指那些被IOC容器所管理的对象 AOP 常用的注解  @Aspect  声明为切面类 @Before  前置通知 @A">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg">
+<meta property="article:published_time" content="2022-10-11T06:23:19.000Z">
+<meta property="article:modified_time" content="2023-01-10T12:35:16.283Z">
+<meta property="article:author" content="Levy">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://levyya.github.io/2022/10/11/java-%E7%9F%A5%E8%AF%86%E7%82%B9/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'java 知识点',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-01-10 20:35:16'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/background_color.css"><meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="Levy's blog" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/%E9%98%BF%E5%B0%BC%E4%BA%9A.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">65</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">36</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Levy's blog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">java 知识点</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-10-11T06:23:19.000Z" title="发表于 2022-10-11 14:23:19">2022-10-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-01-10T12:35:16.283Z" title="更新于 2023-01-10 20:35:16">2023-01-10</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Java/">Java</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="java 知识点"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+<p>计算机科学领域的任何问题都可以通过增加一个间接的中间层来解决，计算机整个体系从上到下都是按照严格的层次结构设计的</p>
+</blockquote>
+<h2 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h2><h3 id="设计模式原则"><a href="#设计模式原则" class="headerlink" title="设计模式原则"></a>设计模式原则</h3><p>单例模式</p>
+<p>工厂模式</p>
+<p>代理模式</p>
+<p>装饰者模式</p>
+<p>责任链模式</p>
+<p>模板模式</p>
+<p>策略模式</p>
+<p>外观模式</p>
+<h2 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h2><h3 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h3><p>IOC 和 AOP 常用的注解</p>
+<p>Bean 代指那些被IOC容器所管理的对象</p>
+<p>AOP 常用的注解</p>
+<ul>
+<li>@Aspect  声明为切面类</li>
+<li>@Before  前置通知</li>
+<li>@AfterReturning  后置通知</li>
+<li>@AfterThrowing  异常通知</li>
+<li>@Around  环绕通知</li>
+<li>@Pointcut  指定切入点表达式</li>
+</ul>
+<p>SpringBoot 常用注解</p>
+<ul>
+<li><p>@SpringBootApplication</p>
+<ul>
+<li>@Configuration</li>
+<li>@EnableAutoConfiguration</li>
+<li>@ComponentScan</li>
+</ul>
+</li>
+<li><p>@Autowired</p>
+</li>
+<li><p>@Component, @Repository, @Service, @Controller</p>
+</li>
+<li><p>@RestController</p>
+<ul>
+<li>@Controller</li>
+<li>@ResponseBody</li>
+</ul>
+</li>
+<li><p>@Scope</p>
+<ul>
+<li>singleton</li>
+<li>prototype</li>
+<li>request</li>
+<li>session</li>
+</ul>
+</li>
+<li><p>@GetMapping</p>
+<ul>
+<li>等价于 @RequestMapping(value&#x3D;””, method&#x3D;RequestMethod.GET)</li>
+</ul>
+</li>
+<li><p>@PathVariable</p>
+<ul>
+<li>获取路径参数</li>
+</ul>
+</li>
+<li><p>@RequestParam</p>
+<ul>
+<li>获取查询参数</li>
+</ul>
+</li>
+<li><p>@RequestBody</p>
+<ul>
+<li>HttpMessageConverter 将请求中的body中的json字符串转换为Java对象</li>
+</ul>
+</li>
+<li><p>@ConfigurationProperties</p>
+</li>
+<li><p>@Value</p>
+</li>
+<li><p>@Valid</p>
+<ul>
+<li>@NotNull</li>
+</ul>
+</li>
+<li><p>@Validated</p>
+</li>
+<li><p>@ControllerAdvice</p>
+<ul>
+<li>ExceptionHandler</li>
+</ul>
+</li>
+<li><p>@Entity</p>
+</li>
+<li><p>@Table</p>
+</li>
+<li><p>@Id</p>
+</li>
+<li></li>
+</ul>
+<p>微服务</p>
+<h2 id="分布式理论"><a href="#分布式理论" class="headerlink" title="分布式理论"></a>分布式理论</h2><h3 id="CAP"><a href="#CAP" class="headerlink" title="CAP"></a>CAP</h3><p>C 一致性</p>
+<p>A 可用性</p>
+<p>P 分区容错性</p>
+<p>CP架构：Zookeeper、HBase</p>
+<p>AP架构：Eureka、Cassandra</p>
+<p>强一致性场景下选择CP</p>
+<p>Nacos 既可以CP也可以AP</p>
+<h3 id="BASE"><a href="#BASE" class="headerlink" title="BASE"></a>BASE</h3><p>Basically Available</p>
+<p>Soft-state</p>
+<p>Eventually Consistent</p>
+<p>核心思想：即使无法做到强一致性，但每个应用都可以根据自身业务特点，采取适当的方式来使系统达到最终一致性。</p>
+<p>软状态：允许系统中的数据存在中间状态</p>
+<p>最终一致性具体方式</p>
+<ul>
+<li>读时修复</li>
+<li>写时修复</li>
+<li>异步修复</li>
+</ul>
+<h3 id="共识算法"><a href="#共识算法" class="headerlink" title="共识算法"></a>共识算法</h3><p>Paxos、Raft、ZAB</p>
+<p>Paxos</p>
+<ul>
+<li>Basic Paxos<ul>
+<li>提议者</li>
+<li>接受者</li>
+<li>学习者</li>
+</ul>
+</li>
+<li>Multi Paxos</li>
+</ul>
+<p>二阶段提交</p>
+<p>Raft 算法</p>
+<p>拜占庭将军：多位将军如何达成是否要进攻的一致性决定，信使消息可靠但有可能被暗杀。</p>
+<p>节点类型</p>
+<ul>
+<li>Leader</li>
+<li>Candidate</li>
+<li>Follower</li>
+</ul>
+<h2 id="Java-基础"><a href="#Java-基础" class="headerlink" title="Java 基础"></a>Java 基础</h2><h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><ul>
+<li>String, StringBuffer, StringBuilder</li>
+</ul>
+<h3 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h3><h4 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h4><p>数据结构</p>
+<h3 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h3><p>synchronized 和 Lock</p>
+<p>方法   锁  CPU</p>
+<p>sleep   不释放    释放</p>
+<p>yield    不释放    释放</p>
+<p>join    释放    释放</p>
+<p>wait    释放    释放</p>
+<h3 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h3><p>死亡对象判断方法</p>
+<ul>
+<li>引用计数法</li>
+<li>可达性分析法<ul>
+<li>GC Roots<ul>
+<li>虚拟机栈（栈帧中的本地变量表）中引用的对象</li>
+<li>本地方法栈（Native方法）中引用的对象</li>
+<li>方法区中类静态属性引用的对象</li>
+<li>方法区中常量引用的对象</li>
+<li>所有被同步锁持有的对象</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>4 种引用类型</p>
+<ul>
+<li>强引用<ul>
+<li>默认，内存不足时报OOM，也不会回收</li>
+</ul>
+</li>
+<li>软引用<ul>
+<li>内存空间不足时回收</li>
+<li>和ReferenceQueue 联合使用</li>
+</ul>
+</li>
+<li>弱引用<ul>
+<li>只要被发现就会被回收</li>
+</ul>
+</li>
+<li>虚引用<ul>
+<li>任何适合都可能被回收</li>
+</ul>
+</li>
+</ul>
+<p>垃圾收集算法</p>
+<ul>
+<li>标记清除算法</li>
+<li>标记复制算法</li>
+<li>标记整理算法</li>
+<li>分代收集算法</li>
+</ul>
+<p>垃圾收集器</p>
+<ul>
+<li><p>Serial</p>
+</li>
+<li><p>ParNew</p>
+</li>
+<li><p>Parallel Scavenge</p>
+</li>
+<li><p>Serial Old</p>
+</li>
+<li><p>Parallel Old</p>
+</li>
+<li><p>CMS</p>
+<ul>
+<li>初始标记</li>
+<li>并发标记</li>
+<li>重新标记</li>
+<li>并发清除（清除未标记的区域）</li>
+</ul>
+</li>
+<li><p>G1</p>
+<ul>
+<li>步骤<ul>
+<li>初始标记</li>
+<li>并发标记</li>
+<li>最终标记</li>
+<li>筛选回收</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>ZGC</p>
+</li>
+</ul>
+<p>类加载过程</p>
+<ul>
+<li>加载</li>
+<li>连接<ul>
+<li>验证</li>
+<li>准备</li>
+<li>解析</li>
+</ul>
+</li>
+<li>初始化</li>
+</ul>
+<p>类加载器</p>
+<ul>
+<li>启动类加载器 Bootstrap ClassLoader</li>
+<li>拓展类加载器 Extension ClassLoader</li>
+<li>应用程序类加载器 Application ClassLoader</li>
+<li>用户自定义类加载器 User Defined ClassLoader</li>
+</ul>
+<h3 id="异常机制"><a href="#异常机制" class="headerlink" title="异常机制"></a>异常机制</h3><p>Throwable</p>
+<p>Error &amp; Exception</p>
+<ul>
+<li><p>Error</p>
+<ul>
+<li>VirtulMachineError<ul>
+<li>StackOverFlowError</li>
+<li>OutOfMemoryError</li>
+</ul>
+</li>
+<li>AWTError</li>
+</ul>
+</li>
+<li><p>Exception</p>
+<ul>
+<li>IOException<ul>
+<li>EOFException</li>
+<li>FileNotFoundException</li>
+</ul>
+</li>
+<li>RuntimeException<ul>
+<li>ArrithmeticException</li>
+<li>MissingResourceException</li>
+<li>ClassNotFoundException</li>
+<li>NullPointerException</li>
+<li>IllegalArgumentException</li>
+<li>ArrayIndexOutOfBoundsException</li>
+<li>UnknownTypeException</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h3><p>线程池</p>
+<p>ThreadPoolExecutor</p>
+<ul>
+<li>corePoolSize</li>
+<li>maximumPoolSize</li>
+<li>workQueue</li>
+<li>keepAliveTime<ul>
+<li>线程池中的线程数量大于corePoolSize时，如果没有新的任务提交，核心线程外的线程不会立即销毁，而是等待keepAliveTime才会被回收销毁</li>
+</ul>
+</li>
+<li>unit</li>
+<li>threadFactory</li>
+<li>handler<ul>
+<li>AbortPolicy</li>
+<li>DiscardPolicy</li>
+<li>CallerRunsPolicy</li>
+<li>DiscardOldestPolicy</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TaskProcessUtil</span> &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Map&lt;String, ExecutorService&gt; executors = <span class="keyword">new</span> <span class="title class_">ConcurrentHashMap</span>&lt;&gt;();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> ExecutorService <span class="title function_">init</span><span class="params">(String poolName, <span class="type">int</span> poolSize)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">ThreadPollExecutor</span>(pollSize, pollSize, </span><br><span class="line">                                      <span class="number">0L</span>, TimeUnit.MILLISECONDS, </span><br><span class="line">                                      <span class="keyword">new</span> <span class="title class_">LinkedBlockingQueue</span>&lt;Runnable&gt;(), </span><br><span class="line">                                      <span class="keyword">new</span> <span class="title class_">ThreadFactoryBuilder</span>().setNameFormat(<span class="string">&quot;Pool0&quot;</span> + poolName).setDaemon(<span class="literal">false</span>).build(), </span><br><span class="line">                                      <span class="keyword">new</span> <span class="title class_">ThreadPoolExecutor</span>.CallerRunsPolicy());</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> ExecutorService <span class="title function_">getOrIhitExecutors</span><span class="params">(String poolName, <span class="type">int</span> poolSize)</span> &#123;</span><br><span class="line">        <span class="type">ExecutorService</span> <span class="variable">executorService</span> <span class="operator">=</span> executors.get(poolName);</span><br><span class="line">        <span class="keyword">if</span> (<span class="literal">null</span> == executorService) &#123;</span><br><span class="line">            <span class="keyword">synchronized</span> (TaskProcessUtil.class) &#123;</span><br><span class="line">                executorService = init(poolName, poolSize);</span><br><span class="line">                executors.put(poolName, executorService);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> executorService;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">releaseExecutors</span><span class="params">(String poolName)</span> &#123;</span><br><span class="line">        <span class="type">ExecutorService</span> <span class="variable">executorService</span> <span class="operator">=</span> executors.remove(poolName);</span><br><span class="line">        <span class="keyword">if</span> (executorService != <span class="literal">null</span>) &#123;</span><br><span class="line">            executorService.shutdown();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+<h2 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h2><h3 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h3><p><strong>主键索引 &amp; 二级索引</strong></p>
+<p><strong>聚集索引</strong>：索引和数据放在一起，主键索引就是聚集索引。</p>
+<p>优点：查询速度快，查找到索引就能拿到数据</p>
+<p>缺点：</p>
+<ol>
+<li>依赖于有序数据</li>
+<li>更新代价大<ol>
+<li>修改数据，需要修改对应的索引</li>
+</ol>
+</li>
+</ol>
+<p><strong>非聚集索引</strong>：索引和数据分开，二级索引就是非聚集索引</p>
+<p>优点：</p>
+<ol>
+<li>更新代价小</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li>可能需要回表</li>
+</ol>
+<p><strong>覆盖索引</strong>：一个索引覆盖所需要查询的字段的值</p>
+<h3 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h3><p>概念：逻辑上的一组操作，要么都执行，要么都不执行</p>
+<p>ACID</p>
+<p>A 原子性</p>
+<p>C 一致性</p>
+<p>I  隔离性</p>
+<p>D 持久性</p>
+<p>开启事务的方式</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">/</span><span class="operator">/</span> <span class="keyword">method</span> <span class="number">1</span></span><br><span class="line"><span class="keyword">BEGIN</span>;  <span class="operator">/</span><span class="operator">/</span> <span class="keyword">or</span> <span class="keyword">START</span> TRANSACTION</span><br><span class="line"><span class="keyword">SELECT</span> ...;</span><br><span class="line"><span class="keyword">UPDATE</span> ...;</span><br><span class="line"><span class="keyword">COMMIT</span>;</span><br><span class="line"><span class="operator">/</span><span class="operator">/</span> <span class="keyword">method</span> <span class="number">2</span></span><br><span class="line"><span class="keyword">SET</span> AUTOCOMMIT <span class="operator">=</span> <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="锁-1"><a href="#锁-1" class="headerlink" title="锁"></a>锁</h3><ul>
+<li><p>表锁 &amp; 行锁</p>
+</li>
+<li><p>共享锁 &amp; 排他锁</p>
+</li>
+<li><p>意向锁 </p>
+</li>
+<li><p>行锁</p>
+</li>
+<li><p>间隙锁</p>
+</li>
+<li><p>临键锁（Next-key Lock)</p>
+</li>
+</ul>
+<h3 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h3><p>redo log</p>
+<p>属于物理日志，记录”在某个数据页上做了什么修改“，属于InnoDB存储引擎</p>
+<p>bin log</p>
+<ul>
+<li><p>属于逻辑日志，记录sql语句，属于MySQL Server层</p>
+</li>
+<li><p>功能：数据备份</p>
+</li>
+<li><p>记录格式：statement，row，mixed</p>
+</li>
+</ul>
+<p>undo log</p>
+<ul>
+<li>发生异常时，对已经执行的操作进行回滚</li>
+<li>用来保证事务的原子性</li>
+</ul>
+<p><strong>drop, delete, truncate 区别</strong></p>
+<ul>
+<li>drop 丢弃数据，直接将表删掉</li>
+<li>truncate 清空数据，只删除表中的数据，再插入数据时自增长id又从1开始，在清空表中的数据时候使用</li>
+<li>delete 删除数据，如果不加where，等同于truncate<ul>
+<li>delete from tableName where column&#x3D;columnName</li>
+</ul>
+</li>
+</ul>
+<h2 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h2><p>OSI 七层模型</p>
+<ul>
+<li>应用层</li>
+<li>表示层</li>
+<li>会话层</li>
+<li>传输层</li>
+<li>网络层</li>
+<li>数据链路层</li>
+<li>物理层</li>
+</ul>
+<p>TCP&#x2F;IP 四层模型</p>
+<ul>
+<li>应用层<ul>
+<li>HTTP, DNS, FTP, Telnet, DHCP, SMTP, POP3, IMAP, SSH</li>
+</ul>
+</li>
+<li>传输层<ul>
+<li>TCP, UDP</li>
+</ul>
+</li>
+<li>网络层<ul>
+<li>IP, ARP, ICMP, ARP, RIP, OSPF, BGP, NAT</li>
+</ul>
+</li>
+<li>网络接口层<ul>
+<li>MAC, CSMA&#x2F;CD</li>
+</ul>
+</li>
+</ul>
+<p>HTTP 常见状态码</p>
+<p>2XX （成功状态码）</p>
+<ul>
+<li>200 OK：请求被成功处理</li>
+<li>201 Created</li>
+<li>202 Accepted</li>
+<li>203 No Content</li>
+</ul>
+<p>3XX （重定向状态码）</p>
+<ul>
+<li>301 Moved Permanently：资源被永久重定向了</li>
+<li>302 Found：资源被临时重定向</li>
+</ul>
+<p>4XX （客户端错误状态码）</p>
+<ul>
+<li>400 Bad Request：发送的HTTP请求存在问题</li>
+<li>401 Unauthorized：未认证</li>
+<li>403 Forbidden：非法请求</li>
+<li>404 Not Found：资源未找到</li>
+<li>409 Conflict</li>
+</ul>
+<p>5XX （服务端错误状态码）</p>
+<ul>
+<li>500 Internal Server Error</li>
+<li>502 Bad Gateway</li>
+<li>503 Unavailable</li>
+</ul>
+<h3 id="HTTP-2-0"><a href="#HTTP-2-0" class="headerlink" title="HTTP 2.0"></a>HTTP 2.0</h3><ul>
+<li>二进制传输</li>
+<li>头部压缩 （HPACK算法，只发送差异数据）</li>
+<li>多路复用</li>
+<li>服务端推送</li>
+<li>安全性（HTTPS, TLS）</li>
+</ul>
+<h3 id="HTTP-3-0"><a href="#HTTP-3-0" class="headerlink" title="HTTP 3.0"></a>HTTP 3.0</h3><ul>
+<li>QUIC 基于UDP实现</li>
+</ul>
+<h2 id="Zookeeper"><a href="#Zookeeper" class="headerlink" title="Zookeeper"></a>Zookeeper</h2><p>应用场景</p>
+<ol>
+<li><p>分布式锁</p>
+<p>通过创建唯一节点获取分布式锁，当获得锁的一方执行完相关代码或者挂掉之后就释放锁</p>
+</li>
+<li><p>命名服务</p>
+<p>通过Zookeeper的顺序节点生成全局唯一ID</p>
+</li>
+<li><p>数据发布、订阅</p>
+<p>通过Watcher机制，将数据发布到Zookeeper被监听的节点上，其它机器可通过监听Zookeeper上节点的变化来实现配置的动态更新</p>
+</li>
+</ol>
+<p>如何防止集群脑裂？</p>
+<p>Zookeeper 的过半机制，少于等于一半是不能产生leader的</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Levy</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://levyya.github.io/2022/10/11/java-%E7%9F%A5%E8%AF%86%E7%82%B9/">https://levyya.github.io/2022/10/11/java-%E7%9F%A5%E8%AF%86%E7%82%B9/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://levyya.github.io" target="_blank">Levy's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Java/">Java</a></div><div class="post_share"><div class="social-share" data-image="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/10/12/paddle-quantum/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">paddle_quantum</div></div></a></div><div class="next-post pull-right"><a href="/2022/10/11/%E8%8B%B1%E8%AF%AD-%E9%82%A3%E4%BA%9B%E6%94%B9%E5%8F%98%E4%B8%96%E7%95%8C%E7%9A%84%E5%A5%B3%E6%80%A7/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">英语-那些改变世界的女性</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/07/30/Java%20%E9%94%99%E9%A2%98%E9%9B%86/" title="Java 错题集"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-30</div><div class="title">Java 错题集</div></div></a></div><div><a href="/2022/08/05/%E7%94%A8%E5%8F%8B%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/" title="用友面试准备"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-05</div><div class="title">用友面试准备</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/%E9%98%BF%E5%B0%BC%E4%BA%9A.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Levy</div><div class="author-info__description"></div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">65</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">36</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Levyya"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">准备毕业中......</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.</span> <span class="toc-text">设计模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%8E%9F%E5%88%99"><span class="toc-number">1.1.</span> <span class="toc-text">设计模式原则</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6"><span class="toc-number">2.</span> <span class="toc-text">框架</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring"><span class="toc-number">2.1.</span> <span class="toc-text">Spring</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E5%B8%83%E5%BC%8F%E7%90%86%E8%AE%BA"><span class="toc-number">3.</span> <span class="toc-text">分布式理论</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CAP"><span class="toc-number">3.1.</span> <span class="toc-text">CAP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BASE"><span class="toc-number">3.2.</span> <span class="toc-text">BASE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B1%E8%AF%86%E7%AE%97%E6%B3%95"><span class="toc-number">3.3.</span> <span class="toc-text">共识算法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java-%E5%9F%BA%E7%A1%80"><span class="toc-number">4.</span> <span class="toc-text">Java 基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#String"><span class="toc-number">4.1.</span> <span class="toc-text">String</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9B%86%E5%90%88"><span class="toc-number">4.2.</span> <span class="toc-text">集合</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#HashMap"><span class="toc-number">4.2.1.</span> <span class="toc-text">HashMap</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%94%81"><span class="toc-number">4.3.</span> <span class="toc-text">锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JVM"><span class="toc-number">4.4.</span> <span class="toc-text">JVM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%82%E5%B8%B8%E6%9C%BA%E5%88%B6"><span class="toc-number">4.5.</span> <span class="toc-text">异常机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B"><span class="toc-number">4.6.</span> <span class="toc-text">多线程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL"><span class="toc-number">5.</span> <span class="toc-text">MySQL</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B4%A2%E5%BC%95"><span class="toc-number">5.1.</span> <span class="toc-text">索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8B%E5%8A%A1"><span class="toc-number">5.2.</span> <span class="toc-text">事务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%94%81-1"><span class="toc-number">5.3.</span> <span class="toc-text">锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A5%E5%BF%97"><span class="toc-number">5.4.</span> <span class="toc-text">日志</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C"><span class="toc-number">6.</span> <span class="toc-text">计算机网络</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP-2-0"><span class="toc-number">6.1.</span> <span class="toc-text">HTTP 2.0</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP-3-0"><span class="toc-number">6.2.</span> <span class="toc-text">HTTP 3.0</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Zookeeper"><span class="toc-number">7.</span> <span class="toc-text">Zookeeper</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/01/10/hexo%20%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" title="Hexo 常用命令"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hexo 常用命令"/></a><div class="content"><a class="title" href="/2023/01/10/hexo%20%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" title="Hexo 常用命令">Hexo 常用命令</a><time datetime="2023-01-10T12:35:53.941Z" title="发表于 2023-01-10 20:35:53">2023-01-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/01/09/hexo%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E9%97%AE%E9%A2%98/" title="hexo图片加载问题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="hexo图片加载问题"/></a><div class="content"><a class="title" href="/2023/01/09/hexo%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E9%97%AE%E9%A2%98/" title="hexo图片加载问题">hexo图片加载问题</a><time datetime="2023-01-09T11:50:18.000Z" title="发表于 2023-01-09 19:50:18">2023-01-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/01/09/%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0%E6%B5%8B%E8%AF%95/" title="图片上传测试"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="图片上传测试"/></a><div class="content"><a class="title" href="/2023/01/09/%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0%E6%B5%8B%E8%AF%95/" title="图片上传测试">图片上传测试</a><time datetime="2023-01-09T09:07:45.000Z" title="发表于 2023-01-09 17:07:45">2023-01-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/06/github%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E4%B8%8A%E4%BC%A0/" title="github本地项目上传"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="github本地项目上传"/></a><div class="content"><a class="title" href="/2022/12/06/github%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E4%B8%8A%E4%BC%A0/" title="github本地项目上传">github本地项目上传</a><time datetime="2022-12-06T07:24:42.000Z" title="发表于 2022-12-06 15:24:42">2022-12-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/12/05/ComplexQNN/" title="ComplexQNN"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ComplexQNN"/></a><div class="content"><a class="title" href="/2022/12/05/ComplexQNN/" title="ComplexQNN">ComplexQNN</a><time datetime="2022-12-05T09:24:03.000Z" title="发表于 2022-12-05 17:24:03">2022-12-05</time></div></div></div></div></div></div></main><footer id="footer" style="background: #ace0f9"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By Levy</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.css"><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script></div><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" data-mobile="false" data-text="好困,富强,公正,法治,❤️国,敬业,明主,友善,自由,平等,文明,和谐" data-fontsize="20px" data-random="true" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
