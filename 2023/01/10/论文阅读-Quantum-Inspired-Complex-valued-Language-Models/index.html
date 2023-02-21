@@ -1,0 +1,267 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>论文阅读--Quantum-Inspired Complex-valued Language Models... | Levy's blog</title><meta name="keywords" content="论文"><meta name="author" content="Levy"><meta name="copyright" content="Levy"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="链接：click 作者：  Qin Zhao 1,† , Chenguang Hou 2,† and Ruifeng Xu 1,3,*  摘要 基于方面的情感分析(ABSA)是一种细粒度的情感分析方法，其目的是对面向方面的极性进行分类。当前模型的向量表示通常受限于实际值。基于量子理论的数学公式，量子语言模型越来越受到人们的关注。这样的模型中的单词可以投射为量子系统中的物理粒子，并且自然地由希尔伯特">
+<meta property="og:type" content="article">
+<meta property="og:title" content="论文阅读--Quantum-Inspired Complex-valued Language Models...">
+<meta property="og:url" content="https://levyya.github.io/2023/01/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-Quantum-Inspired-Complex-valued-Language-Models/index.html">
+<meta property="og:site_name" content="Levy&#39;s blog">
+<meta property="og:description" content="链接：click 作者：  Qin Zhao 1,† , Chenguang Hou 2,† and Ruifeng Xu 1,3,*  摘要 基于方面的情感分析(ABSA)是一种细粒度的情感分析方法，其目的是对面向方面的极性进行分类。当前模型的向量表示通常受限于实际值。基于量子理论的数学公式，量子语言模型越来越受到人们的关注。这样的模型中的单词可以投射为量子系统中的物理粒子，并且自然地由希尔伯特">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg">
+<meta property="article:published_time" content="2023-01-10T14:03:22.000Z">
+<meta property="article:modified_time" content="2023-01-11T09:31:56.887Z">
+<meta property="article:author" content="Levy">
+<meta property="article:tag" content="论文">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://levyya.github.io/2023/01/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-Quantum-Inspired-Complex-valued-Language-Models/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '论文阅读--Quantum-Inspired Complex-valued Language Models...',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-01-11 17:31:56'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/background_color.css"><meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="Levy's blog" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/%E9%98%BF%E5%B0%BC%E4%BA%9A.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">76</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">39</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Levy's blog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">论文阅读--Quantum-Inspired Complex-valued Language Models...</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-01-10T14:03:22.000Z" title="发表于 2023-01-10 22:03:22">2023-01-10</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-01-11T09:31:56.887Z" title="更新于 2023-01-11 17:31:56">2023-01-11</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="论文阅读--Quantum-Inspired Complex-valued Language Models..."><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>链接：<a href>click</a></p>
+<p>作者：</p>
+<blockquote>
+<p>Qin Zhao 1,† , Chenguang Hou 2,† and Ruifeng Xu 1,3,*</p>
+</blockquote>
+<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><blockquote>
+<p>基于方面的情感分析(ABSA)是一种细粒度的情感分析方法，其目的是对面向方面的极性进行分类。当前模型的向量表示通常受限于实际值。基于量子理论的数学公式，量子语言模型越来越受到人们的关注。这样的模型中的单词可以投射为量子系统中的物理粒子，并且自然地由希尔伯特空间中具有丰富表示的复值向量表示，而不是实值向量。本文研究了ABSA模型的Hilbert空间表示，构造了三个强实值基线的复化。实验结果证明了复值嵌入的有效性和复值嵌入模型的卓越性能，说明复值嵌入可以携带超出真实嵌入的额外信息。特别是，复值RoBERTa模型在三个标准基准数据集上优于或接近先前的最先进技术。</p>
+</blockquote>
+<p>关键词：量子语言模型；复数值网络；方面级情感分析</p>
+<p>后面重点关注复值RoBERTa的构建</p>
+<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><blockquote>
+<p>基于方面的情感分析(Aspect-Based Sentiment Analysis, ABSA)是一种细粒度的情感分析任务，其目的是将句子的情感极性按一个或多个方面进行分类[1-5]。ABSA任务中涉及的基本情感要素有方面类别、方面项、意见项和情感极性。方面类别定义了方面术语应该属于哪个类别。例如，在餐厅领域中，“食物”和“服务”是方面类别。方面项是在给定文本中显示的意见目标。意见术语表达了一个人对方面术语的看法。情感极性描述了情感在一个方面类别或方面术语上的取向，通常是积极的、消极的或中性的。例如，在“the food was great and the service was severe slow”这句话中，第一个方面词是“food”，属于“food”范畴，意见词是“great”。因此，“食物”方面术语和“食物”方面类别的情感极性为正。第二个方面的术语是“服务”，属于“服务”范畴，意见术语是“慢”。因此，方面术语“服务”和方面类别“服务”的情感极性是消极的。ABSA通常由两个子任务组成:方面提取(AE)和方面级情感分类(ALSC)。本文只关注ALSC，即预测不同方面术语在上下文中的确切情感极性，而不是在句子层面或文档层面上对整体情感极性进行分类。也就是说，我们的任务是在给定的上下文中对方面术语的情感极性进行分类，比如上面例子中提到的“食物”和“服务”。这种面向方面的情感极性分类可以更好地研究评论中细粒度的情感倾向，从而为决策者提供更准确的建议。</p>
+<p>此前，为了避免设计手工制作的特征，大量基于深度学习的神经网络模型被提出来解决ALSC任务，如基于rnn的模型[6-9]，基于cnn的模型[10,11]。为了更好地对方面级情感进行分类，在构建神经网络时也考虑了目标信息。注意机制在图像识别、机器翻译、句子摘要等方面已被证明是有效的[12-14]，在ALSC任务[9]中也引入了注意机制，考虑词与方面的关系，动态计算不同词的注意权重。最近，预训练的基于变压器的模型在各种NLP任务中占据主导地位，在ALSC任务中也受到了很多关注。基于BERT和roberta的模型在各种ABSA基准数据集上取得了突出的成功[15-19]。</p>
+<p>然而，在大多数模型中使用的向量表示都被限制为真实值。复值向量是一个广泛应用于信号处理、量子物理、医学图像处理等各个领域的基本概念，它是由一对正交维上相互关联的实向量和虚向量组成。由于复值向量具有更丰富的表示能力，复化神经网络已被应用于信号处理[20,21]、计算机视觉[22]、自然语言处理[23]等众多领域。从量子理论的角度，将多维实值输入向量映射到频率空间或波向量空间，可以自然地表示为复值输入向量。</p>
+<p>受量子理论启发的量子语言模型(QLMs)具有与复值向量兼容的特性，受到越来越多的关注。在量子语言模型中，每个单词都自然地表示为希尔伯特空间中量子系统中的一个观测状态，并由义素的叠加表示[24,25]。从这样的量子视角出发，将量子算符与神经网络计算进行类比，用量子物理学发展的方法来弥补NLP中神经网络可解释性的不足，可以更有原则地构建神经网络。基于此背景，Li et al.[25]构造了用于问答任务的复值网络，Zhao et al.[26]提出了基于量子期望值的语言模型。受量子语言模型的出色工作及其与复值向量的兼容性的激励，我们研究使用量子物理数学框架中的复值表示来解决ABSA任务。为此，通过引入语义希尔伯特空间构建复值神经网络，其中ABSA模型的一个词被视为物理状态，编码为复值向量。为了对结果模型的性能进行基准测试，每个模型都根据其相应的实值基线进行评估。在本研究中，我们构建了三个强实基线的复化，即复值LSTM模型、基于复值注意的LSTM模型和复值BERT&#x2F;RoBERTa模型。从数学角度看，实向量空间V的复化是通过取V与复数的张量积来定义的。这里，实值基线的复化遵循类似的操作。值得注意的是，通过将复值向量的虚部设为零，复值模型只是缩小到它们的实值等价。</p>
+<p>在三个基准数据集(即Twitter、Restaurant 14和Laptop 14)上的实验结果表明，我们的复值嵌入模型表现出色，并说明复值嵌入可以携带超出真实嵌入的额外信息。具体而言，LSTM模型的复值版本和基于注意的LSTM模型都优于原始模型。同时，复值RoBERTa模型在三个标准基准上优于或接近于之前的SOTA模型。结果表明，由量子物理粒子表示扩展而来的复杂化有可能被封装到ABSA的通用语言模型中。</p>
+</blockquote>
+<h3 id="基于方面的情感分析"><a href="#基于方面的情感分析" class="headerlink" title="基于方面的情感分析"></a>基于方面的情感分析</h3><p>（Aspect-Based Sentiment Analysis, ABSA）</p>
+<p>基本情感要素：方面类别、方面项、意见项、情感极性</p>
+<p>两个子任务：方面提取（AE）；方面级情感分类（ALSC）</p>
+<h3 id="复数值向量"><a href="#复数值向量" class="headerlink" title="复数值向量"></a>复数值向量</h3><p>由一对<strong>正交</strong>维上<strong>相互关联</strong>的实向量和虚向量组成</p>
+<p>优势：具有更丰富的表示能力</p>
+<p>应用：信号处理、计算机视觉、自然语言处理</p>
+<p>与量子理论的联系：将多维实数值输入向量映射到频率空间或波向量空间</p>
+<h3 id="量子语言模型"><a href="#量子语言模型" class="headerlink" title="量子语言模型"></a>量子语言模型</h3><p>每个单词表示为希尔伯特空间中量子系统的一个观测状态，并由义素的叠加表示</p>
+<p>优势：用量子物理学发展的方法，可以弥补NLP中神经网络解释性不足的问题</p>
+<p>相关工作：Li 构造用于问答任务的复值网络；Zhao 量子期望值语言模型</p>
+<h3 id="该文研究内容"><a href="#该文研究内容" class="headerlink" title="该文研究内容"></a>该文研究内容</h3><ol>
+<li><p>构建了三个模型：复值LSTM；复值注意力LSTM；复值BERT&#x2F;RoBERTa</p>
+</li>
+<li><p>实验数据集：Twitter；Restaurant 14; Laptop 14</p>
+</li>
+</ol>
+<h2 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h2><blockquote>
+<p>本节将介绍ALSC任务和QLMs的相关研究。</p>
+<p>为了解决ALSC任务，循环神经网络和卷积神经网络是最常用的深度神经网络架构。结合目标词的信息，Tang et al.[8]首次提出了两种单向LSTMs (TD-LSTMs)，分别独立处理目标词的左右上下文。随后，在ALSC任务中引入了注意机制。MemNet由Tang et al.[27]设计，它使用多跳注意力来揭示每个上下文单词相对于方面目标的重要性。Wang等[9]设计了ATAE-LSTM，以方面词嵌入和上下文词嵌入的串联为输入，应用注意机制动态计算注意权重。Chen等人发布的内存循环注意(Recurrent Attention on memory, RAM)是一种双向LSTM，利用具有记忆层的多重注意机制来获取全局语义特征。</p>
+<p>近年来，基于变压器的模型在各种NLP任务中占据主导地位，ALSC任务也引起了广泛的关注。Song et al.[15]提出的BERT- SPC是一种纯BERT文本对分类模型，并取得了优异的性能。通过预先训练的BERT提供输入词嵌入，他们同时设计了一个注意编码器网络(AEN)，该网络可以利用注意机制获得语义词-上下文交互。Yang等[16]提出了一种基于多头自注意的局部上下文焦点(LCF)机制。BERT- ADA表明，通过在任务相关语料库[17]上进行微调，可以进一步改进只适应特定任务的预训练BERT。</p>
+<p>第一个QLM是由Sordoni, Nie和Bengio[29]在信息检索(IR)中提出的，将Hilbert空间简化为实空间。受到他们工作的启发，人们对量子语言模型进行了广泛的研究[24,30]。受限于真实空间，Zhang et al.[24]提出了一种端到端的基于神经网络的类量子语言模型(Quantum-like Language Model, NNQLM)来解决问答任务。在该模型中，每个单词都被视为系统中的一个纯量子态，问答句分别由其对应的密度矩阵表征。Zhang et al.[31]采用张量积来描述整个词序列之间的相互作用，建立了一个仅采用实值嵌入的量子多体波函数启发的语言模型。</p>
+<p>值得注意的是，上述模型中使用的向量表示仅局限于实值神经网络。特别是对于qlm，他们将希尔伯特空间过度简化为真正的子空间。因此，后来又提出了复值量子语言模型，将量子系统的物理状态恰当地表示为复值函数。在问答任务中，复值量子语言模型已被成功应用，并证明了复杂形式的单词表示在额外的虚数部分的支持下，可以提供比真实单词更多的信息。在这些模型中，Li et al.[25]建立了复值匹配网络(complex-value Network for Matching, CNM)，其中每个词在极坐标系统中编码为一个复值向量，其长度和方向分别表示相对词权和叠加。Zhao等人[26]提出了一种基于量子期望值的语言模型。在此框架下，语言模型具有良好的可解释性和性能。李等人。研究了复值神经网络在视频情感分析任务中的应用，其模型与目前最先进的模型[32]取得了相当的效果。</p>
+<p>然而，据笔者所知，复值框架还没有在ABSA中得到任何应用。因此，受量子语言模型令人兴奋的工作及其与复值向量的兼容性的启发，我们从量子物理的数学框架中研究了复值表示在ABSA任务中的应用。</p>
+</blockquote>
+<h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>首先介绍方面级情感分类的一些工作：TD-LSTMs，RAM（Atthention），BERT-SPC，BERT-ADA；</p>
+<p>然后介绍QLM相关工作：NNQLM，量子多体波函数语言模型，CNM，量子期望值语言模型。</p>
+<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>此处简单介绍了一下量子计算理论基础，翻译略。</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2023/01/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-Quantum-Inspired-Complex-valued-Language-Models/image-20230110224306577.png" class alt="image-20230110224306577">
+
+
+
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><blockquote>
+<p>复值语言模型受量子语言模型的启发，一个词被视为量子系统中的一个物理可观测物，它由一个复值向量表示。在此范围下，将三个均以复值嵌入为输入的QLMs进一步构造为三个强实值基线的复化，即复值LSTM模型、基于复值注意的LSTM模型和复值BERT&#x2F;RoBERTa模型。将得到的三种复值模型与相应的实值模型进行比较，以衡量其性能。通过对比，我们希望看到嵌入的虚部可以携带超出实部的额外信息，进一步强调引入量子语言模型的重要性。首先，我们愿做一个澄清。本文基于三个典型的实基线，建立了三个复值语言模型。然而，除了被选中的，还有大量不同类型的神经网络用于语言任务。我们希望这三种类型的模型能够阐明复值结构对提高模型性能的影响，并显示进一步探索其他类型神经网络结构的可能性。</p>
+<p>在本节中，我们首先介绍了实向量空间的复化，将单词编码为复值向量的过程，然后介绍了构造三个实基线的复化的方法。</p>
+</blockquote>
+<h3 id="复数值语言模型"><a href="#复数值语言模型" class="headerlink" title="复数值语言模型"></a>复数值语言模型</h3><h4 id="Complex-valued-LSTM"><a href="#Complex-valued-LSTM" class="headerlink" title="Complex-valued LSTM"></a>Complex-valued LSTM</h4><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2023/01/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-Quantum-Inspired-Complex-valued-Language-Models/image-20230110224831764.png" class alt="image-20230110224831764">
+
+<h4 id="Complex-Valued-Attention-Based-LSTM"><a href="#Complex-Valued-Attention-Based-LSTM" class="headerlink" title="Complex-Valued Attention-Based LSTM"></a>Complex-Valued Attention-Based LSTM</h4><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2023/01/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-Quantum-Inspired-Complex-valued-Language-Models/image-20230110224820862.png" class alt="image-20230110224820862">
+
+<h3 id="Complex-Valued-BERT-x2F-RoBERTa-Model"><a href="#Complex-Valued-BERT-x2F-RoBERTa-Model" class="headerlink" title="Complex-Valued BERT&#x2F;RoBERTa Model"></a>Complex-Valued BERT&#x2F;RoBERTa Model</h3><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2023/01/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-Quantum-Inspired-Complex-valued-Language-Models/image-20230110224804949.png" class alt="image-20230110224804949">
+
+
+
+
+
+<h2 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h2><h3 id="实验数据集"><a href="#实验数据集" class="headerlink" title="实验数据集"></a>实验数据集</h3><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2023/01/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-Quantum-Inspired-Complex-valued-Language-Models/image-20230110225048766.png" class alt="image-20230110225048766">
+
+<h3 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h3><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/2023/01/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-Quantum-Inspired-Complex-valued-Language-Models/image-20230110225134938.png" class alt="image-20230110225134938">
+
+<h2 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h2><p>这篇工作是利用复数值网络构建了三个模型：C-LSTM，C-ATAE-LSTM，C-BERT&#x2F;C-RoBERTa，实验通过方面级情感分析来验证模型结果。</p>
+<p>与我提出来的ComplexQNN的区别：</p>
+<ul>
+<li>相同点：都利用了复数值网络去构建量子启发式模型</li>
+<li>不同点：ComplexQNN尝试构建了量子系统模块，如词语以量子态表示，句子以密度矩阵表示，中间特征提取通过演化（维度不发生改变），最后结果通过测量得到预测结果</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Levy</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://levyya.github.io/2023/01/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-Quantum-Inspired-Complex-valued-Language-Models/">https://levyya.github.io/2023/01/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-Quantum-Inspired-Complex-valued-Language-Models/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://levyya.github.io" target="_blank">Levy's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%AE%BA%E6%96%87/">论文</a></div><div class="post_share"><div class="social-share" data-image="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/01/11/Jsonnet-%E8%AF%AD%E6%B3%95/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Jsonnet 语法</div></div></a></div><div class="next-post pull-right"><a href="/2023/01/09/hexo%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E9%97%AE%E9%A2%98/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">hexo图片加载问题</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/04/28/DEBERTA/" title="DEBERTA"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-28</div><div class="title">DEBERTA</div></div></a></div><div><a href="/2022/04/26/Deep-Position-wise-Interaction-Network-for-CTR-Prediction/" title="Deep Position-wise Interaction Network for CTR Prediction"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-26</div><div class="title">Deep Position-wise Interaction Network for CTR Prediction</div></div></a></div><div><a href="/2022/04/28/Learning-Knowledge-Graph-Embedding-With-Heterogeneous-Relation-Attention-Networks/" title="Learning Knowledge Graph Embedding With Heterogeneous Relation Attention Networks"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-28</div><div class="title">Learning Knowledge Graph Embedding With Heterogeneous Relation Attention Networks</div></div></a></div><div><a href="/2022/04/25/SimCSE/" title="SimCSE"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-25</div><div class="title">SimCSE</div></div></a></div><div><a href="/2022/12/05/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-Quanthoven/" title="论文阅读--Quanthoven"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-12-05</div><div class="title">论文阅读--Quanthoven</div></div></a></div><div><a href="/2022/10/10/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-Quantum-Self-Attention-Neural-Networks-for-Text-Classification/" title="论文阅读-Quantum Self-Attention Neural Networks for Text Classification"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-10</div><div class="title">论文阅读-Quantum Self-Attention Neural Networks for Text Classification</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/%E9%98%BF%E5%B0%BC%E4%BA%9A.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Levy</div><div class="author-info__description"></div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">76</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">39</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Levyya"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">准备毕业中......</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%91%98%E8%A6%81"><span class="toc-number">1.</span> <span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E8%A8%80"><span class="toc-number">2.</span> <span class="toc-text">引言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E6%96%B9%E9%9D%A2%E7%9A%84%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90"><span class="toc-number">2.1.</span> <span class="toc-text">基于方面的情感分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%8D%E6%95%B0%E5%80%BC%E5%90%91%E9%87%8F"><span class="toc-number">2.2.</span> <span class="toc-text">复数值向量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8F%E5%AD%90%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.3.</span> <span class="toc-text">量子语言模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%A5%E6%96%87%E7%A0%94%E7%A9%B6%E5%86%85%E5%AE%B9"><span class="toc-number">2.4.</span> <span class="toc-text">该文研究内容</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E5%B7%A5%E4%BD%9C"><span class="toc-number">3.</span> <span class="toc-text">相关工作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">3.1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-number">3.2.</span> <span class="toc-text">背景</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-number">4.</span> <span class="toc-text">方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%8D%E6%95%B0%E5%80%BC%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B"><span class="toc-number">4.1.</span> <span class="toc-text">复数值语言模型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Complex-valued-LSTM"><span class="toc-number">4.1.1.</span> <span class="toc-text">Complex-valued LSTM</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Complex-Valued-Attention-Based-LSTM"><span class="toc-number">4.1.2.</span> <span class="toc-text">Complex-Valued Attention-Based LSTM</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Complex-Valued-BERT-x2F-RoBERTa-Model"><span class="toc-number">4.2.</span> <span class="toc-text">Complex-Valued BERT&#x2F;RoBERTa Model</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C"><span class="toc-number">5.</span> <span class="toc-text">实验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="toc-number">5.1.</span> <span class="toc-text">实验数据集</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C"><span class="toc-number">5.2.</span> <span class="toc-text">实验结果</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%80%83"><span class="toc-number">6.</span> <span class="toc-text">思考</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/02/21/%E6%AD%8C%E8%AF%8D-%E7%94%9F%E5%91%BD%E5%9B%A0%E4%BD%A0%E8%80%8C%E7%81%AB%E7%83%AD/" title="歌词--生命因你而火热"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="歌词--生命因你而火热"/></a><div class="content"><a class="title" href="/2023/02/21/%E6%AD%8C%E8%AF%8D-%E7%94%9F%E5%91%BD%E5%9B%A0%E4%BD%A0%E8%80%8C%E7%81%AB%E7%83%AD/" title="歌词--生命因你而火热">歌词--生命因你而火热</a><time datetime="2023-02-21T12:15:20.000Z" title="发表于 2023-02-21 20:15:20">2023-02-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/02/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="数据结构"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据结构"/></a><div class="content"><a class="title" href="/2023/02/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="数据结构">数据结构</a><time datetime="2023-02-20T13:07:08.000Z" title="发表于 2023-02-20 21:07:08">2023-02-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/02/20/%E6%AD%8C%E8%AF%8D-%E7%81%AB%E8%BD%A6/" title="歌词--火车"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="歌词--火车"/></a><div class="content"><a class="title" href="/2023/02/20/%E6%AD%8C%E8%AF%8D-%E7%81%AB%E8%BD%A6/" title="歌词--火车">歌词--火车</a><time datetime="2023-02-20T11:24:04.000Z" title="发表于 2023-02-20 19:24:04">2023-02-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/02/20/%E6%AD%8C%E8%AF%8D-%E8%8A%B1%E7%81%AB-%E6%96%B0%E8%A3%A4%E5%AD%90/" title="歌词--花火 (新裤子)"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="歌词--花火 (新裤子)"/></a><div class="content"><a class="title" href="/2023/02/20/%E6%AD%8C%E8%AF%8D-%E8%8A%B1%E7%81%AB-%E6%96%B0%E8%A3%A4%E5%AD%90/" title="歌词--花火 (新裤子)">歌词--花火 (新裤子)</a><time datetime="2023-02-20T11:16:16.000Z" title="发表于 2023-02-20 19:16:16">2023-02-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/02/20/%E6%AD%8C%E8%AF%8D-%E6%B2%A1%E6%9C%89%E7%90%86%E6%83%B3%E7%9A%84%E4%BA%BA%E4%B8%8D%E4%BC%A4%E5%BF%83/" title="歌词--没有理想的人不伤心"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="歌词--没有理想的人不伤心"/></a><div class="content"><a class="title" href="/2023/02/20/%E6%AD%8C%E8%AF%8D-%E6%B2%A1%E6%9C%89%E7%90%86%E6%83%B3%E7%9A%84%E4%BA%BA%E4%B8%8D%E4%BC%A4%E5%BF%83/" title="歌词--没有理想的人不伤心">歌词--没有理想的人不伤心</a><time datetime="2023-02-20T11:15:55.000Z" title="发表于 2023-02-20 19:15:55">2023-02-20</time></div></div></div></div></div></div></main><footer id="footer" style="background: #ace0f9"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By Levy</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.css"><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script></div><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" data-mobile="false" data-text="好困,富强,公正,法治,❤️国,敬业,明主,友善,自由,平等,文明,和谐" data-fontsize="20px" data-random="true" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

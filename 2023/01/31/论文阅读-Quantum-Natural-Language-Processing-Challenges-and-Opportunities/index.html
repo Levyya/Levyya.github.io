@@ -1,0 +1,220 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>论文阅读--Quantum Natural Language Processing: Challenges and Opportunities | Levy's blog</title><meta name="keywords" content="默认标签"><meta name="author" content="Levy"><meta name="copyright" content="Levy"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="链接：click 作者：  Raffaele Guarasci, Giuseppe De Pietroand Massimo Esposito * Institute for High Performance Computing and Networking (ICAR), National Research Council (CNR),80131 Naples, Italy; &amp;#114;&amp;#9">
+<meta property="og:type" content="article">
+<meta property="og:title" content="论文阅读--Quantum Natural Language Processing: Challenges and Opportunities">
+<meta property="og:url" content="https://levyya.github.io/2023/01/31/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-Quantum-Natural-Language-Processing-Challenges-and-Opportunities/index.html">
+<meta property="og:site_name" content="Levy&#39;s blog">
+<meta property="og:description" content="链接：click 作者：  Raffaele Guarasci, Giuseppe De Pietroand Massimo Esposito * Institute for High Performance Computing and Networking (ICAR), National Research Council (CNR),80131 Naples, Italy; &amp;#114;&amp;#9">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg">
+<meta property="article:published_time" content="2023-01-31T08:05:16.000Z">
+<meta property="article:modified_time" content="2023-02-02T07:04:12.828Z">
+<meta property="article:author" content="Levy">
+<meta property="article:tag" content="默认标签">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://levyya.github.io/2023/01/31/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-Quantum-Natural-Language-Processing-Challenges-and-Opportunities/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '论文阅读--Quantum Natural Language Processing: Challenges and Opportunities',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-02-02 15:04:12'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/background_color.css"><meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="Levy's blog" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/%E9%98%BF%E5%B0%BC%E4%BA%9A.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">76</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">39</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Levy's blog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">论文阅读--Quantum Natural Language Processing: Challenges and Opportunities</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-01-31T08:05:16.000Z" title="发表于 2023-01-31 16:05:16">2023-01-31</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-02-02T07:04:12.828Z" title="更新于 2023-02-02 15:04:12">2023-02-02</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="论文阅读--Quantum Natural Language Processing: Challenges and Opportunities"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>链接：<a target="_blank" rel="noopener" href="https://www.mdpi.com/2076-3417/12/11/5651">click</a></p>
+<p>作者：</p>
+<blockquote>
+<p>Raffaele Guarasci, Giuseppe De Pietroand Massimo Esposito *</p>
+<p>Institute for High Performance Computing and Networking (ICAR), National Research Council (CNR),80131 Naples, Italy; <a href="mailto:&#114;&#97;&#102;&#102;&#97;&#x65;&#x6c;&#x65;&#46;&#103;&#117;&#97;&#x72;&#x61;&#115;&#x63;&#105;&#x40;&#105;&#99;&#x61;&#x72;&#x2e;&#x63;&#110;&#114;&#46;&#x69;&#x74;">&#114;&#97;&#102;&#102;&#97;&#x65;&#x6c;&#x65;&#46;&#103;&#117;&#97;&#x72;&#x61;&#115;&#x63;&#105;&#x40;&#105;&#99;&#x61;&#x72;&#x2e;&#x63;&#110;&#114;&#46;&#x69;&#x74;</a> (R.G.); <a href="mailto:&#x67;&#x69;&#x75;&#115;&#101;&#112;&#112;&#101;&#x2e;&#100;&#x65;&#x70;&#x69;&#101;&#116;&#114;&#x6f;&#64;&#105;&#99;&#97;&#114;&#x2e;&#x63;&#x6e;&#x72;&#46;&#x69;&#x74;">&#x67;&#x69;&#x75;&#115;&#101;&#112;&#112;&#101;&#x2e;&#100;&#x65;&#x70;&#x69;&#101;&#116;&#114;&#x6f;&#64;&#105;&#99;&#97;&#114;&#x2e;&#x63;&#x6e;&#x72;&#46;&#x69;&#x74;</a> (G.D.P.)*Correspondence: <a href="mailto:&#x6d;&#97;&#x73;&#115;&#x69;&#x6d;&#111;&#x2e;&#101;&#115;&#x70;&#111;&#x73;&#x69;&#x74;&#x6f;&#64;&#105;&#99;&#x61;&#x72;&#x2e;&#99;&#110;&#114;&#x2e;&#105;&#x74;">&#x6d;&#97;&#x73;&#115;&#x69;&#x6d;&#111;&#x2e;&#101;&#115;&#x70;&#111;&#x73;&#x69;&#x74;&#x6f;&#64;&#105;&#99;&#x61;&#x72;&#x2e;&#99;&#110;&#114;&#x2e;&#105;&#x74;</a></p>
+</blockquote>
+<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><blockquote>
+<p>近年来，自然语言处理(NLP)和量子计算(QNLP)的结合非常成功，导致了所谓的量子自然语言处理(QNLP)的几种方法的发展。这是一个混合领域，其中量子力学的潜力被开发并应用于语言处理的关键方面，涉及不同的NLP任务。迄今为止开发的方法从那些仅在理论层面上证明量子优势的方法到在量子硬件上实现算法的方法。本文旨在列出迄今为止开发的方法，按类型进行分类，即理论工作和在经典或量子硬件上实现的工作;按任务，即一般目的，如语法-语义表示或特定的NLP任务，如情绪分析或问题回答;以及评估阶段使用的资源，即使用基准数据集还是自定义数据集。讨论了QNLP在性能和方法方面的优势，并给出了一些关于使用QNLP方法取代最先进的基于深度学习的方法的可能考虑。</p>
+<p>关键词:量子计算;自然语言处理</p>
+</blockquote>
+<p>一篇关于量子自然语言处理的综述</p>
+<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><blockquote>
+<p>简介近年来，基于深度学习架构的神经语言模型的爆发使得所有NLP任务[1-4]都有了显著的改善，从机器翻译[5]，文本分类[6]，共指解析[7,8]或多语言语法分析[9-11]。特别是，基于transformer的模型(如BERT)已被证明优于上一代最先进的体系结构，如长短期记忆(LSTM)循环神经网络(RNN)。然而，与性能的提高相匹配的是模型的复杂性不断增加，这导致了一个悖论。模型需要大量的数据来进行有效的训练，在时间、资源和计算上都有巨大的成本。这是目前基于transformer的方法的主要缺点，例如这类神经网络的参数数量达到了数千亿数量级(数据参考OpenAI GPT模型)[12,13]。此外，它需要大量的资源用于训练阶段(例如，整个维基百科语料库的几种语言)。除了这些方面，还有一些固有的开放性问题，这些模型真正从语言中学习了什么[14,15]，它们如何对这些信息进行编码，以及学习到的信息有多少是真正可解释的。文献已经产生了一些研究，重点是神经语言模型是否能够编码某种语言信息，或者它们是否只是复制书面文本中观察到的模式。近年来备受关注的另一种方法是源于量子计算，特别是量子机器学习子领域。这个想法是利用从量子力学中借来的强大方面来克服当前方法的计算限制。经典统计学的主导范式可以用量子力学扩展，用复数矩阵表示对象。</p>
+<p>在量子计算中，比特被量子比特所取代，量子比特能够利用量子系统的叠加[19]特性处理非二进制状态下的信息。与经典方法相比，量子算法可以使用量子比特的固有属性(称为超多项式加速)执行更小的计算复杂度[18,20,21]。最近的工作观察到了量子算法的发展，这些算法可以作为机器学习应用的基础。在某些情况下，量子特性被用于简单地提高机器学习方法的性能，而在其他情况下，机器学习的问题已经使用量子理论重新表述[22,23]。利用量子系统的机器学习算法处理经典数据已经产生了大量的研究。量子机器学习已被用于不同的目的:深入研究量子现象在学习系统中的使用，探索量子计算机在量子数据上学习的能力，以及在量子硬件上重新制定和实现机器学习算法的可能性。就像以前在经典机器学习的情况下发生的那样，量子机器学习算法的这种快速增长，无论是从硬件还是软件方面(就设备和算法而言)，都涉及到自然语言处理(NLP)领域。这就产生了所谓的量子nlp (QNLP)[24]，定义为在量子硬件上实现自然语言。它将组合语言结构(语法和语义)与量子系统实现的组合相匹配，以便对自然语言建模，并利用源自量子机器学习的算法执行简单的NLP任务。</p>
+<p>QNLP的核心思想是，将语言意义和语法结构结合在一起的最有效方式是由范畴量子力学框架提供的。此外，它还承诺更多地了解建模中涉及的语言的含义。使用可视化表示语言的优点是可以表示一个词的意思和它与句子中其他词的关系，以及它的结构。这将从经典的基于依赖项的表示法向前迈进一步，这种表示法依赖于树结构，而与所涉及的语法元素的含义没有显式连接。事实上所有QNLP方法的共同理论框架是自然语言[25]的分类分布成分(DisCoCat)模型。DisCoCat允许将单词和短语的含义编码为量子态，并随后在专用硬件或模拟器中作为量子电路实现。目前，开发的方法主要可以通过混合方法进行，将经典操作与量子力学的操作相结合。这是因为，尽管基于量子的方法的优势在理论水平上得到了证明[25,26]，但硬件的可用性目前仅限于小型到中型规模的机器(特别是NISQ计算机:有噪声的中型规模)[27]。鉴于NLP社区对QNLP提供的可能性越来越感兴趣，本文旨在提供解决自然语言处理任务的量子方法的全面概述。在简要介绍了量子力学和NLP的概念和性质之后，描述了所提出的方法的理论背景。随后，列出了不同的工作，区分它们的类型，即尚未真正实现的完整理论工作，基于量子力学但在经典硬件上运行的工作，以及可以在目前可用的量子硬件上运行并已在真实数据上测试的工作。</p>
+<p>请注意，尽管QNLP很有前途，可以解决许多与当前成熟的NLP机制相关的关键问题，但目前还不可能在经典方法和量子方法之间进行真正的比较。这是因为许多作品只有理论上已经证明了性能优势，而那些已经实现的性能优势只能在非常小的数据部分上运行。本文的结构如下:第二部分分别从量子计算和语言学的角度介绍了本文的理论背景。首先，在2.1节中详细介绍了QNLP中使用的基本量子力学概念、算法和硬件。第2.2节简要介绍了量子计算和NLP之间的交集。之后，在第3节中列举了迄今为止提出的QNLP方法，将其分为理论方法(第4节)、经典硬件方法(第5节)和在真实量子硬件上运行的方法(第6节)。第7节和第8节致力于回顾所列出的工作，并强调了QNLP方法的优点和缺点。</p>
+</blockquote>
+<p>* </p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h2 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h2><h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><blockquote>
+<p>尽管QNLP仍然是一个新的研究领域，到目前为止，它的应用主要集中在相对简单的任务上，但它已经在许多方面显示出了许多机会和优势。</p>
+<p>首先，从理论的角度来看，基于量子的方法可以更好地处理自然语言的机制:这就是所谓的QNLP的“量子原生”观点，得到了许多研究的支持。因此，量子语言模型将更适合以一种更符合人类真实认知过程的方式来理解和描述自然语言现象。然而，尽管这一说法很吸引人，但目前没有具体的证据来支持它，除了在管理特定情况下，即使用有限和受控词汇的简单句子。这既不能反映人类学习语言的实际方式，也不能反映语言的产生。从应用的角度来看，随着量子计算机的功率和存储容量的增加，未来可能会出现一种解决方案，这可能是处理越来越大的向量空间的最现实和最合适的选择。从理论的角度来看，使用CFG和预组引入不同结构的不同类型的句子是昂贵的，因为在某些情况下，这意味着这些资源必须从头开始构建。此外，还有一些关于这些类型的语法是否能够近似所有语法的问题语言现象的种类。</p>
+<p>关于所谓的“量子优势”，与最先进的基线相比，一些运行在经典硬件上的QNLP模型在各种任务中取得了类似甚至更好的性能。作为这些语句应用的一个例子，QNLP模型被应用于管理NLP的各个方面，这些方面对于处理经典概率模型一直是至关重要的，例如信息检索中的干扰现象，术语依赖或歧义消解。</p>
+<p>然而，量子加速所提供的性能提升仅在理论上得到了证明，依赖于量子硬件，该硬件可以利用尚未实现且昂贵的QRAM。尽管已经找到了替代解决方案来弥补这一缺点，但NLP任务上的实现还不能与文献中众所周知的经典解决方案相比。事实上，这些方法所测试的数据非常少(在中等规模的实验中大约有100个自然语言句子)，这是由于目前NISQ计算机施加的限制，也是由于需要为所涉及的句子创建一个特别的语法，因此任务非常有限。</p>
+<p>关于未来的工作，QNLP无疑可以解决依赖大型数据集和具有大量参数的复杂模型的理想结局，但仍有许多问题尚未解决。从理论的角度来看，在模型基础上构建cfg以及为不同语言创建引人注目的形式化描述的可能性方面仍然存在可伸缩性的问题。相反，从应用的角度来看，它可以考虑更重要的现实世界数据的使用，以及更复杂的QNLP任务的实现，如句子相似性和所有那些涉及含糊性的任务，这些任务可能从QNLP的量子原生方法中受益最大。然而，尽管QNLP方法可能需要数年时间才能大规模执行，就像目前基于深度学习的模型一样，QNLP可以提供独特的机会，使用量子特性以更类似于自然语言的工作方式来处理具有挑战性的语言现象。利用量子叠加来模拟语言中的不确定性和歧义或纠缠来有效地描述语法和语义的组成和分布已经成功地证明了这一点。</p>
+</blockquote>
+<h2 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h2></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Levy</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://levyya.github.io/2023/01/31/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-Quantum-Natural-Language-Processing-Challenges-and-Opportunities/">https://levyya.github.io/2023/01/31/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-Quantum-Natural-Language-Processing-Challenges-and-Opportunities/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://levyya.github.io" target="_blank">Levy's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E9%BB%98%E8%AE%A4%E6%A0%87%E7%AD%BE/">默认标签</a></div><div class="post_share"><div class="social-share" data-image="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/02/02/%E6%AD%8C%E8%AF%8D-%E6%B5%AA%E5%AD%90%E5%9B%9E%E5%A4%B4/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">歌词--浪子回头</div></div></a></div><div class="next-post pull-right"><a href="/2023/01/27/hexo%20%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Hexo 常用命令</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/01/17/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-QNLP-in-Pratice/" title="论文阅读--QNLP in Pratice"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-17</div><div class="title">论文阅读--QNLP in Pratice</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/%E9%98%BF%E5%B0%BC%E4%BA%9A.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Levy</div><div class="author-info__description"></div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">76</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">39</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Levyya"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">准备毕业中......</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%91%98%E8%A6%81"><span class="toc-number">1.</span> <span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E8%A8%80"><span class="toc-number">2.</span> <span class="toc-text">引言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-number">3.</span> <span class="toc-text">方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C"><span class="toc-number">4.</span> <span class="toc-text">实验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="toc-number">5.</span> <span class="toc-text">结论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%80%83"><span class="toc-number">6.</span> <span class="toc-text">思考</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/02/21/%E6%AD%8C%E8%AF%8D-%E7%94%9F%E5%91%BD%E5%9B%A0%E4%BD%A0%E8%80%8C%E7%81%AB%E7%83%AD/" title="歌词--生命因你而火热"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="歌词--生命因你而火热"/></a><div class="content"><a class="title" href="/2023/02/21/%E6%AD%8C%E8%AF%8D-%E7%94%9F%E5%91%BD%E5%9B%A0%E4%BD%A0%E8%80%8C%E7%81%AB%E7%83%AD/" title="歌词--生命因你而火热">歌词--生命因你而火热</a><time datetime="2023-02-21T12:15:20.000Z" title="发表于 2023-02-21 20:15:20">2023-02-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/02/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="数据结构"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据结构"/></a><div class="content"><a class="title" href="/2023/02/20/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="数据结构">数据结构</a><time datetime="2023-02-20T13:07:08.000Z" title="发表于 2023-02-20 21:07:08">2023-02-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/02/20/%E6%AD%8C%E8%AF%8D-%E7%81%AB%E8%BD%A6/" title="歌词--火车"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="歌词--火车"/></a><div class="content"><a class="title" href="/2023/02/20/%E6%AD%8C%E8%AF%8D-%E7%81%AB%E8%BD%A6/" title="歌词--火车">歌词--火车</a><time datetime="2023-02-20T11:24:04.000Z" title="发表于 2023-02-20 19:24:04">2023-02-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/02/20/%E6%AD%8C%E8%AF%8D-%E8%8A%B1%E7%81%AB-%E6%96%B0%E8%A3%A4%E5%AD%90/" title="歌词--花火 (新裤子)"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="歌词--花火 (新裤子)"/></a><div class="content"><a class="title" href="/2023/02/20/%E6%AD%8C%E8%AF%8D-%E8%8A%B1%E7%81%AB-%E6%96%B0%E8%A3%A4%E5%AD%90/" title="歌词--花火 (新裤子)">歌词--花火 (新裤子)</a><time datetime="2023-02-20T11:16:16.000Z" title="发表于 2023-02-20 19:16:16">2023-02-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/02/20/%E6%AD%8C%E8%AF%8D-%E6%B2%A1%E6%9C%89%E7%90%86%E6%83%B3%E7%9A%84%E4%BA%BA%E4%B8%8D%E4%BC%A4%E5%BF%83/" title="歌词--没有理想的人不伤心"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="歌词--没有理想的人不伤心"/></a><div class="content"><a class="title" href="/2023/02/20/%E6%AD%8C%E8%AF%8D-%E6%B2%A1%E6%9C%89%E7%90%86%E6%83%B3%E7%9A%84%E4%BA%BA%E4%B8%8D%E4%BC%A4%E5%BF%83/" title="歌词--没有理想的人不伤心">歌词--没有理想的人不伤心</a><time datetime="2023-02-20T11:15:55.000Z" title="发表于 2023-02-20 19:15:55">2023-02-20</time></div></div></div></div></div></div></main><footer id="footer" style="background: #ace0f9"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By Levy</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.css"><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script></div><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" data-mobile="false" data-text="好困,富强,公正,法治,❤️国,敬业,明主,友善,自由,平等,文明,和谐" data-fontsize="20px" data-random="true" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
