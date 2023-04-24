@@ -1,0 +1,308 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>服务器运维 | Levy's blog</title><meta name="keywords" content="默认标签"><meta name="author" content="Levy"><meta name="copyright" content="Levy"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="服务器运维关注的问题 以下是一些服务器运维需要关注的问题：  安全性：确保服务器的安全是非常重要的，可以采取一些措施，比如配置防火墙、使用加密通信协议等来保障服务器的安全。 稳定性：服务器应该具有高可靠性和稳定性，以确保应用程序的正常运行，可以通过监控服务器状态、自动化部署等方式来提高服务器的稳定性。 资源管理：服务器资源的管理也是关键，包括 CPU、内存、磁盘、网络等，需要对资源使用情况进行监控">
+<meta property="og:type" content="article">
+<meta property="og:title" content="服务器运维">
+<meta property="og:url" content="https://levyya.github.io/2023/03/19/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/index.html">
+<meta property="og:site_name" content="Levy&#39;s blog">
+<meta property="og:description" content="服务器运维关注的问题 以下是一些服务器运维需要关注的问题：  安全性：确保服务器的安全是非常重要的，可以采取一些措施，比如配置防火墙、使用加密通信协议等来保障服务器的安全。 稳定性：服务器应该具有高可靠性和稳定性，以确保应用程序的正常运行，可以通过监控服务器状态、自动化部署等方式来提高服务器的稳定性。 资源管理：服务器资源的管理也是关键，包括 CPU、内存、磁盘、网络等，需要对资源使用情况进行监控">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg">
+<meta property="article:published_time" content="2023-03-19T05:47:09.000Z">
+<meta property="article:modified_time" content="2023-03-19T06:24:42.370Z">
+<meta property="article:author" content="Levy">
+<meta property="article:tag" content="默认标签">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://levyya.github.io/2023/03/19/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '服务器运维',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-03-19 14:24:42'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/background_color.css"><meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="Levy's blog" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/%E9%98%BF%E5%B0%BC%E4%BA%9A.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">85</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">42</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Levy's blog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">服务器运维</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-03-19T05:47:09.000Z" title="发表于 2023-03-19 13:47:09">2023-03-19</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-03-19T06:24:42.370Z" title="更新于 2023-03-19 14:24:42">2023-03-19</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="服务器运维"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="服务器运维关注的问题"><a href="#服务器运维关注的问题" class="headerlink" title="服务器运维关注的问题"></a>服务器运维关注的问题</h2><blockquote>
+<p>以下是一些服务器运维需要关注的问题：</p>
+<ol>
+<li>安全性：确保服务器的安全是非常重要的，可以采取一些措施，比如配置防火墙、使用加密通信协议等来保障服务器的安全。</li>
+<li>稳定性：服务器应该具有高可靠性和稳定性，以确保应用程序的正常运行，可以通过监控服务器状态、自动化部署等方式来提高服务器的稳定性。</li>
+<li>资源管理：服务器资源的管理也是关键，包括 CPU、内存、磁盘、网络等，需要对资源使用情况进行监控和管理，以优化服务器性能和资源利用率。</li>
+<li>日志管理：服务器日志可以帮助我们诊断和解决问题，需要设置正确的日志级别、定期清理日志文件等，以便更好地管理服务器。</li>
+<li>应用程序部署和升级：在服务器上部署和升级应用程序是一项重要任务，需要确保应用程序可以正确地运行，并及时更新和升级应用程序，以提高应用程序的性能和安全性。</li>
+<li>数据备份和恢复：服务器上的数据备份是非常重要的，以便在发生灾难性事件时可以快速恢复数据，并保证业务的连续性。</li>
+<li>网络性能：服务器的网络性能也是关键，需要保证网络带宽、延迟和稳定性，以提供良好的用户体验和应用程序性能。</li>
+<li>负载均衡：负载均衡是提高应用程序性能和稳定性的重要手段，需要使用负载均衡器来分发流量，并根据实际情况进行负载均衡策略的优化。</li>
+</ol>
+<p>以上是一些服务器运维需要关注的问题，对于不同的应用场景和需求，还可能存在其他需要关注的问题。</p>
+</blockquote>
+<h2 id="学习路线"><a href="#学习路线" class="headerlink" title="学习路线"></a>学习路线</h2><blockquote>
+<p>以下是一些服务器运维学习路线的建议：</p>
+<ol>
+<li>熟悉 Linux 操作系统的基础知识，包括文件系统、进程管理、网络配置等。</li>
+<li>掌握 Linux 命令行的使用，如文件操作、进程管理、网络配置等。</li>
+<li>学习 Shell 脚本编程，以便自动化一些运维任务。</li>
+<li>学习常见的 Web 服务器的安装、配置和管理，如 Apache、Nginx 等。</li>
+<li>学习常见的数据库的安装、配置和管理，如 MySQL、PostgreSQL 等。</li>
+<li>学习常见的缓存技术的安装、配置和管理，如 Redis、Memcached 等。</li>
+<li>学习常见的监控和日志管理工具的使用，如 Nagios、Zabbix、Grafana、Logrotate 等。</li>
+<li>学习常见的容器技术的使用，如 Docker、Kubernetes 等。</li>
+<li>学习常见的自动化部署工具的使用，如 Ansible、Puppet、Chef 等。</li>
+<li>不断关注新技术和新工具的发展，并及时学习和掌握。</li>
+</ol>
+</blockquote>
+<h2 id="常用的Linux运维命令"><a href="#常用的Linux运维命令" class="headerlink" title="常用的Linux运维命令"></a>常用的Linux运维命令</h2><p><strong>常用的 Linux 运维命令</strong>：</p>
+<blockquote>
+<ol>
+<li>ps：查看当前系统进程，如 ps -ef。</li>
+<li>top：实时查看系统运行状态和进程占用资源情况，如 top。</li>
+<li>netstat：查看网络连接状态，如 netstat -an。</li>
+<li>ifconfig：查看网络接口信息和配置 IP 地址等，如 ifconfig eth0。</li>
+<li>ping：测试网络连通性，如 ping <a target="_blank" rel="noopener" href="http://www.baidu.com./">www.baidu.com。</a></li>
+<li>scp：远程复制文件，如 scp &#x2F;path&#x2F;to&#x2F;local&#x2F;file user@remote:&#x2F;path&#x2F;to&#x2F;remote&#x2F;file。</li>
+<li>ssh：远程登录到服务器，如 ssh user@remote。</li>
+<li>crontab：设置定时任务，如 crontab -e。</li>
+<li>tar：打包和压缩文件，如 tar -czvf file.tar.gz &#x2F;path&#x2F;to&#x2F;file。</li>
+<li>rsync：远程同步文件，如 rsync -avz &#x2F;path&#x2F;to&#x2F;local&#x2F;file user@remote:&#x2F;path&#x2F;to&#x2F;remote&#x2F;file。</li>
+<li>systemctl：管理系统服务，如 systemctl start&#x2F;stop&#x2F;restart&#x2F;status service。</li>
+<li>journalctl：查看系统日志，如 journalctl -u service。</li>
+</ol>
+<p>以上是常用的 Linux 运维命令，根据实际情况和需求，可能会有所不同。</p>
+</blockquote>
+<h2 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h2><p><strong>常用的Docker命令</strong>：</p>
+<blockquote>
+<ol>
+<li>docker run：启动一个新的容器。</li>
+<li>docker ps：列出正在运行的容器。</li>
+<li>docker images：列出所有的镜像。</li>
+<li>docker stop：停止一个或多个正在运行的容器。</li>
+<li>docker rm：删除一个或多个容器。</li>
+<li>docker rmi：删除一个或多个镜像。</li>
+<li>docker pull：下载一个镜像。</li>
+<li>docker push：上传一个镜像。</li>
+<li>docker logs：查看一个容器的日志。</li>
+<li>docker exec：在运行中的容器中执行命令。</li>
+<li>docker inspect：查看一个容器或镜像的详细信息。</li>
+<li>docker build：使用Dockerfile构建镜像。</li>
+<li>docker-compose：使用docker-compose.yml文件定义和运行多个容器的应用程序。</li>
+</ol>
+<p>这些命令是使用Docker时最常用的命令。使用这些命令，可以管理容器和镜像，并进行常见操作，如启动和停止容器、构建和上传镜像、查看容器和镜像的详细信息等。</p>
+</blockquote>
+<h2 id="K8s"><a href="#K8s" class="headerlink" title="K8s"></a>K8s</h2><p><strong>K8s介绍</strong></p>
+<blockquote>
+<p>Kubernetes（k8s）是一个用于容器化应用程序部署、管理和自动化的开源平台，它能够自动化应用程序的部署、扩展和管理，并提供负载均衡、自动伸缩、故障恢复等功能。以下是 k8s 可以做的一些事情：</p>
+<ol>
+<li>部署和管理容器化应用程序：k8s 可以自动化地部署和管理容器化应用程序，确保应用程序在集群中的运行状态。</li>
+<li>自动化应用程序的扩展：k8s 可以根据应用程序的负载情况自动扩展或缩小应用程序的副本数量，以满足用户需求。</li>
+<li>负载均衡：k8s 提供了负载均衡的功能，可以将流量分配到不同的容器或副本中，提高应用程序的可用性和性能。</li>
+<li>服务发现和服务管理：k8s 可以自动发现并管理集群中的服务，确保应用程序可以相互通信，并提供 DNS 名称解析等功能。</li>
+<li>故障恢复：k8s 可以监控应用程序的运行状态，并在容器出现故障时自动进行故障转移和恢复，保证应用程序的稳定性和可靠性。</li>
+<li>滚动升级和回滚：k8s 可以帮助用户进行无缝的应用程序升级和回滚，保证应用程序在升级过程中的可用性。</li>
+<li>多租户支持：k8s 可以支持多租户模式，允许不同的用户或团队使用同一个 k8s 集群，并为他们提供独立的环境和资源隔离。</li>
+</ol>
+<p>总之，k8s 可以帮助用户自动化、简化和优化应用程序的部署、管理和运维，提高应用程序的可用性、性能和可靠性。</p>
+</blockquote>
+<p><strong>基本概念</strong>：</p>
+<blockquote>
+<ol>
+<li>Pod：最小的可部署单元，由一个或多个容器组成，并共享网络和存储资源。</li>
+<li>ReplicaSet：用于创建和管理多个 Pod 副本的控制器。</li>
+<li>Deployment：用于管理 ReplicaSet 和 Pod 的声明式配置对象。</li>
+<li>Service：暴露应用程序的网络服务，并为 Pod 集群提供一个固定的 IP 地址和 DNS 名称。</li>
+<li>Volume：用于在 Pod 中存储数据的抽象。</li>
+<li>Namespace：用于在 Kubernetes 集群中创建虚拟集群的隔离机制。</li>
+<li>ConfigMap：用于存储应用程序配置信息的对象。</li>
+<li>Secret：用于存储敏感信息（如密码和密钥）的对象。</li>
+<li>Node：Kubernetes 集群中的一个工作节点，可以是物理机器或虚拟机。</li>
+<li>Cluster：由多个 Node 组成的 Kubernetes 集群，用于运行和管理容器化应用程序。</li>
+</ol>
+</blockquote>
+<p><strong>常用的 Kubernetes 命令</strong>：</p>
+<blockquote>
+<ol>
+<li>kubectl create：创建资源。</li>
+<li>kubectl get：获取资源列表。</li>
+<li>kubectl describe：获取资源的详细信息。</li>
+<li>kubectl delete：删除资源。</li>
+<li>kubectl apply：应用或更新资源配置。</li>
+<li>kubectl scale：扩展或缩小 Pod 数量。</li>
+<li>kubectl logs：获取 Pod 日志。</li>
+<li>kubectl exec：在容器中执行命令。</li>
+<li>kubectl port-forward：将 Kubernetes Pod 中的端口转发到本地机器。</li>
+<li>kubectl rollout：管理滚动升级。</li>
+<li>kubectl config：管理 Kubernetes 配置文件。</li>
+<li>kubectl version：查看 Kubernetes 版本信息。</li>
+</ol>
+<p>这些命令是使用 Kubernetes 时最常用的命令。使用这些命令，可以管理 Kubernetes 资源，并进行常见操作，如创建和删除资源、获取资源的详细信息、扩展和缩小 Pod 数量、获取 Pod 日志、在容器中执行命令等。</p>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Levy</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://levyya.github.io/2023/03/19/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/">https://levyya.github.io/2023/03/19/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://levyya.github.io" target="_blank">Levy's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E9%BB%98%E8%AE%A4%E6%A0%87%E7%AD%BE/">默认标签</a></div><div class="post_share"><div class="social-share" data-image="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/03/20/%E8%93%9D%E6%A1%A5%E6%9D%AF/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">蓝桥杯</div></div></a></div><div class="next-post pull-right"><a href="/2023/03/19/%E5%AF%B9%E8%AF%9D%E7%B3%BB%E7%BB%9F/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">对话系统</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/03/16/AvWing-record-20230316/" title="AvWing record--20230316"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-16</div><div class="title">AvWing record--20230316</div></div></a></div><div><a href="/2023/03/20/%E8%93%9D%E6%A1%A5%E6%9D%AF/" title="蓝桥杯"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-20</div><div class="title">蓝桥杯</div></div></a></div><div><a href="/2023/01/17/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-QNLP-in-Pratice/" title="论文阅读--QNLP in Pratice"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-17</div><div class="title">论文阅读--QNLP in Pratice</div></div></a></div><div><a href="/2023/01/31/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB-Quantum-Natural-Language-Processing-Challenges-and-Opportunities/" title="论文阅读--Quantum Natural Language Processing: Challenges and Opportunities"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-31</div><div class="title">论文阅读--Quantum Natural Language Processing: Challenges and Opportunities</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/%E9%98%BF%E5%B0%BC%E4%BA%9A.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Levy</div><div class="author-info__description"></div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">85</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">42</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Levyya"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">准备毕业中......</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4%E5%85%B3%E6%B3%A8%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">1.</span> <span class="toc-text">服务器运维关注的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF"><span class="toc-number">2.</span> <span class="toc-text">学习路线</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84Linux%E8%BF%90%E7%BB%B4%E5%91%BD%E4%BB%A4"><span class="toc-number">3.</span> <span class="toc-text">常用的Linux运维命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Docker"><span class="toc-number">4.</span> <span class="toc-text">Docker</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#K8s"><span class="toc-number">5.</span> <span class="toc-text">K8s</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/04/11/k8s/" title="k8s"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="k8s"/></a><div class="content"><a class="title" href="/2023/04/11/k8s/" title="k8s">k8s</a><time datetime="2023-04-11T08:07:51.000Z" title="发表于 2023-04-11 16:07:51">2023-04-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/04/10/%E6%AD%8C%E8%AF%8D-%E6%AD%A4%E7%94%9F%E6%97%A0%E5%8F%AF%E6%81%8B%EF%BC%8C%E5%94%AF%E6%9B%B2%E6%82%A6%E4%B8%B9%E7%94%B0/" title="歌词--此生无可恋，唯曲悦丹田"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="歌词--此生无可恋，唯曲悦丹田"/></a><div class="content"><a class="title" href="/2023/04/10/%E6%AD%8C%E8%AF%8D-%E6%AD%A4%E7%94%9F%E6%97%A0%E5%8F%AF%E6%81%8B%EF%BC%8C%E5%94%AF%E6%9B%B2%E6%82%A6%E4%B8%B9%E7%94%B0/" title="歌词--此生无可恋，唯曲悦丹田">歌词--此生无可恋，唯曲悦丹田</a><time datetime="2023-04-10T02:18:55.000Z" title="发表于 2023-04-10 10:18:55">2023-04-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/04/02/%E8%BD%AF%E8%80%83-%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E5%B8%88/" title="软考--系统架构师"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="软考--系统架构师"/></a><div class="content"><a class="title" href="/2023/04/02/%E8%BD%AF%E8%80%83-%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E5%B8%88/" title="软考--系统架构师">软考--系统架构师</a><time datetime="2023-04-02T06:21:03.000Z" title="发表于 2023-04-02 14:21:03">2023-04-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/20/%E8%93%9D%E6%A1%A5%E6%9D%AF/" title="蓝桥杯"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="蓝桥杯"/></a><div class="content"><a class="title" href="/2023/03/20/%E8%93%9D%E6%A1%A5%E6%9D%AF/" title="蓝桥杯">蓝桥杯</a><time datetime="2023-03-20T03:06:09.000Z" title="发表于 2023-03-20 11:06:09">2023-03-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/19/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/" title="服务器运维"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://levy-blog.oss-cn-hangzhou.aliyuncs.com/pics/TomAndJerry.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="服务器运维"/></a><div class="content"><a class="title" href="/2023/03/19/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%90%E7%BB%B4/" title="服务器运维">服务器运维</a><time datetime="2023-03-19T05:47:09.000Z" title="发表于 2023-03-19 13:47:09">2023-03-19</time></div></div></div></div></div></div></main><footer id="footer" style="background: #ace0f9"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By Levy</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.css"><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script></div><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" data-mobile="false" data-text="好困,富强,公正,法治,❤️国,敬业,明主,友善,自由,平等,文明,和谐" data-fontsize="20px" data-random="true" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
