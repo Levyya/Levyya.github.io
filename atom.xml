@@ -18,9 +18,9 @@
   
   <entry>
     <title>Hexo 常用命令</title>
-    <link href="https://levyya.github.io/2023/09/16/hexo%20%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
-    <id>https://levyya.github.io/2023/09/16/hexo%20%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</id>
-    <published>2023-09-16T11:19:41.528Z</published>
+    <link href="https://levyya.github.io/2023/11/12/hexo%20%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    <id>https://levyya.github.io/2023/11/12/hexo%20%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</id>
+    <published>2023-11-12T02:18:11.608Z</published>
     <updated>2023-01-10T12:35:53.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br><span class="line">$ hexo g</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p><p>Q: Hexo 图片无法加载问题</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-asset-image -- save</span><br></pre></td></tr></table></figure><p>TODO:</p><p><a href="https://cloud.tencent.com/developer/article/1970544">https://cloud.tencent.com/developer/article/1970544</a></p>]]></content>
@@ -44,9 +44,9 @@
   
   <entry>
     <title></title>
-    <link href="https://levyya.github.io/2023/09/16/Vue/"/>
-    <id>https://levyya.github.io/2023/09/16/Vue/</id>
-    <published>2023-09-16T11:17:51.297Z</published>
+    <link href="https://levyya.github.io/2023/11/12/Vue/"/>
+    <id>https://levyya.github.io/2023/11/12/Vue/</id>
+    <published>2023-11-12T02:17:22.620Z</published>
     <updated>2023-06-14T12:53:54.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h1><p><a href="http://www.codeman.ink/discover/singer">网易云在线-Vue</a></p><p>PHP Web开发</p><ul><li><a href="http://laravel.p2hp.com/">Laravel</a></li></ul><h2 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h2><h3 id="声明周期"><a href="#声明周期" class="headerlink" title="声明周期"></a>声明周期</h3><p>开始创建、初始化数据、编译模板、挂载DOM-渲染、更新-渲染、销毁</p><p>钩子函数</p><ul><li>beforeCreate()</li><li>created()</li><li>beforeMount()</li><li>mounted()</li><li>beforeUpdate()</li><li>updated()</li><li>beforeDestory()</li><li>destroyed()</li></ul><p>MVVM (Model, View, ViewModel)</p><h3 id="指令系统"><a href="#指令系统" class="headerlink" title="指令系统"></a>指令系统</h3><p>V-if</p><p>V-for</p><p>v-bind</p><p>v-on</p><p>v-model</p><p>缺点：首次加载慢</p><p>计划</p><ul><li>6.7 Today</li><li>离校前<ul><li>蓝桥杯省赛</li><li>软著</li><li>投稿</li><li>商城项目&#x2F;music播放器</li><li>《代码整洁之道》</li></ul></li><li>6.16 </li><li>入职前</li><li>7.16 去杭州</li></ul>]]></content>
